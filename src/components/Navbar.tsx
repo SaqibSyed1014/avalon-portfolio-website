@@ -56,8 +56,8 @@ const Navbar: React.FC = () => {
 
           {/* Navigation Links */}
           <div className="flex space-x-8 md:space-x-[22px]">
-            <NavLink href="/work" text="Work" />
-            <NavLink href="/about" text="About" />
+            <NavLink href="/" text="Work" />
+            <NavLink href="/" text="About" />
             <NavLink href="https://calendly.com" text="Get in touch" isExternal={true} />
           </div>
         </div>
