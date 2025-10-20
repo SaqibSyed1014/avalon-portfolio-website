@@ -25,7 +25,7 @@ export const Button: FC<ButtonProps> = (props) => {
   return (
     <button
       className={cn(
-        "bg-secondary inline-flex transform cursor-pointer items-center gap-3 rounded-md leading-[130%] text-black capitalize shadow-xl transition duration-300 hover:scale-[1.02] hover:bg-white",
+        "bg-secondary inline-flex transform cursor-pointer justify-center items-center gap-3 text-center rounded-md leading-[130%] text-black capitalize transition duration-300 button-shadow",
         {
           // Sizes
           "px-3 py-1.5 text-sm": size === "sm",
