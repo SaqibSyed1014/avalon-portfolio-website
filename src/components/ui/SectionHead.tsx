@@ -1,6 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 
-const SectionHead = ({ subText, heading, description }) => {
+type TProps = Readonly<ISectionHead>;
+const SectionHead: FC<TProps> = ({ subText, heading, description }) => {
   return (
     <div className="space-y-2.5">
       <span className="text-secondary">{subText}</span>
