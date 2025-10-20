@@ -1,6 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 
-const SectionLayout = ({ children }) => {
+type TProps = Readonly<IChildren>;
+const SectionLayout: FC<TProps> = ({ children }) => {
   return (
     <div className="container">
       <div className="flex flex-col gap-[60px]">{children}</div>
