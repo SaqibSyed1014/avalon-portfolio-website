@@ -1,0 +1,71 @@
+"use client";
+
+import React from "react";
+
+import { Button } from "@/components/ui";
+
+const Hero: React.FC = () => {
+  return (
+    <section className="section-v-space w-full overflow-hidden">
+      <div className="container">
+        <div className="relative z-10 flex flex-col items-start gap-8 font-light">
+          {/* === LEFT COLUMN: Profile and Status === */}
+          <div className="flex items-center gap-6">
+            {/* Stack: Image and Name/Status */}
+            <div className="flex items-center gap-6">
+              <div className="h-[50px] w-[50px] flex-shrink-0 overflow-hidden rounded-full">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://framerusercontent.com/images/vZADFl4NEYLJ11AxhBHI0iET1U.png"
+                  alt="Mark Avalon Profile"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <h3 className="heading-style-2">Mark Avalon</h3>
+
+                {/* Available for work Status (Pulsing Dot) */}
+                <div className="flex items-center gap-[10px]">
+                  <div className="relative flex h-3 w-3">
+                    {/* Pulsing effect using animate-ping (Requires Tailwind animation config) */}
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                    {/* Solid dot */}
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500 shadow-md shadow-green-500/50"></span>
+                  </div>
+                  <p>Available for work</p>
+                </div>
+              </div>
+            </div>
+            <div className="h-[56px] w-[56px] animate-[spin_7s_linear_infinite] duration-[8s]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://framerusercontent.com/images/QQ8Ta0XApGQug7OqXmDapa7BIA.svg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* === RIGHT COLUMN: Headline and Description === */}
+          <div className="flex flex-col gap-5">
+            {/* Headline */}
+            <h1 className="heading-style-1">
+              I&#39;m Mark Avalon, a freelancer designing standout websites for startups.
+            </h1>
+
+            {/* Description */}
+            <p className="text-secondary max-w-3xl text-lg opacity-80 md:text-xl">
+              I design unique websites that turn start-ups into market leaders. Let&#39;s create a
+              digital presence that not only looks amazing but also drives real results for your
+              business.
+            </p>
+          </div>
+
+          <Button>Get in touch</Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
