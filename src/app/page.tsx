@@ -7,6 +7,9 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Process from "@/components/process";
 import Works from "@/components/Works";
+import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
 
 const Home = () => {
   return (
@@ -18,7 +21,10 @@ const Home = () => {
       <Works />
       <Benefits />
       <Process />
+      <Pricing />
+      <Testimonials />
       <CTA />
+      <Footer />
     </div>
   );
 };
