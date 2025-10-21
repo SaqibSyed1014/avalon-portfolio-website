@@ -1,63 +1,130 @@
-import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 import { Button } from "@/components/ui";
+import Marquee from "@/components/ui/Marquee";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
-import Marquee from "@/components/ui/Marquee";
 
-const Works = () => {
-  const projects = [
-    {
-      title: "Quantum",
-      image: "https://framerusercontent.com/images/e633Jp9rA7J1z8Zq58eJTQNeco.jpg",
-      alt: "Project 1",
-    },
-    {
-      title: "Lora",
-      image:
-        "https://framerusercontent.com/images/NAJSIK5XnZdV1Y4SAp0lueMbA.jpg?scale-down-to=2048",
-      alt: "Project 1",
-    },
-    {
-      title: "Eciedge Store",
-      image: "https://framerusercontent.com/images/rhrxm36efhkLLxhTgRh5oSvA3g.png",
-      alt: "Project 1",
-    },
-    {
-      title: "Zenith",
-      image: "https://framerusercontent.com/images/rhrxm36efhkLLxhTgRh5oSvA3g.png",
-      alt: "Project 1",
-    },
-  ];
+interface Project {
+  image: string;
+  alt: string;
+  title: string;
+}
+
+const projects :Project[] = [
+  {
+    title: "Quantum",
+    image: "https://framerusercontent.com/images/e633Jp9rA7J1z8Zq58eJTQNeco.jpg",
+    alt: "Project 1",
+  },
+  {
+    title: "Lora",
+    image:
+      "https://framerusercontent.com/images/NAJSIK5XnZdV1Y4SAp0lueMbA.jpg?scale-down-to=2048",
+    alt: "Project 1",
+  },
+  {
+    title: "Eciedge Store",
+    image: "https://framerusercontent.com/images/rhrxm36efhkLLxhTgRh5oSvA3g.png",
+    alt: "Project 1",
+  },
+  {
+    title: "Zenith",
+    image: "https://framerusercontent.com/images/rhrxm36efhkLLxhTgRh5oSvA3g.png",
+    alt: "Project 1",
+  },
+];
+
+const WorkProjects :React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const horizontalRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<gsap.core.Tween | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const scrollContent = horizontalRef.current;
+    if (!section || !scrollContent) return;
+
+    const setupScroll = () => {
+      // kill old animation if exists
+      animationRef.current?.scrollTrigger?.kill();
+      animationRef.current?.kill();
+
+      const totalWidth = scrollContent.scrollWidth;
+      const scrollDistance = totalWidth - totalWidth/4;
+
+      if (scrollDistance <= 0) return;
+
+      // horizontal scroll tied to vertical scroll
+      animationRef.current = gsap.to(scrollContent, {
+        x: -scrollDistance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.2,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+    };
+
+    setupScroll();
+
+    // update when resizing
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+      setupScroll();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+      animationRef.current?.kill();
+    };
+  }, []);
+
+
   return (
-    <section>
-      <div className="overflow-hidden pt-[100px]">
+    <section ref={sectionRef} className="relative overflow-hidden">
+      <div className="h-[2180px]">
         <div className="flex flex-col gap-[250px]">
-          <SectionLayout>
-            <SectionHead subText="(1) Work" heading="My Recent Projects" />
+          <div className="pt-[100px]">
+            <SectionLayout>
+              <SectionHead subText="(1) Work" heading="My Recent Projects" />
 
-            <div className="flex h-[403px] gap-5">
-              {projects.map((project, index) => (
-                <div key={index} className="h-full w-[49%] flex-none">
-                  <div className="flex h-full flex-col gap-2 rounded-md border border-white/25 p-1.5">
-                    <div className="overflow-hidden rounded-[2px] border border-white/15">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={project.image}
-                        alt={project.alt}
-                        className="h-full w-full object-cover"
-                      />
+              {/*Scroll this section horizontally when user scrolls*/}
+              <div ref={horizontalRef} className="flex h-[403px] gap-5 will-change-transform">
+                {projects.map((project, index) => (
+                  <div key={index} className="h-full w-[49%] flex-none">
+                    <div className="flex h-full flex-col gap-2 rounded-md border border-white/25 p-1.5">
+                      <div className="overflow-hidden rounded-[2px] border border-white/15">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={project.image}
+                          alt={project.alt}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      <h3 className="text-secondary text-xl">{project.title}</h3>
                     </div>
-                    <h3 className="text-secondary text-xl">{project.title}</h3>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <div className="flex justify-center">
-              <Button>View more</Button>
-            </div>
-          </SectionLayout>
+              <div className="flex justify-center">
+                <Button>View more</Button>
+              </div>
+            </SectionLayout>
+          </div>
 
           <div className="bg-secondary flex h-[160px] items-center overflow-hidden">
             <div className="flex gap-16 text-[46px] leading-[110%] text-black [&_li]:shrink-0">
@@ -73,4 +140,6 @@ const Works = () => {
   );
 };
 
-export default Works;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+export default WorkProjects;

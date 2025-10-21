@@ -58,11 +58,11 @@ const FaqSection = () => {
                   key={index}
                   className="py-2 border-b border-gray-300 overflow-hidden transition-all duration-300 cursor-pointer"
                 >
-                  <button
+                  <div
                     onClick={() => toggleFAQ(index)}
                     className="flex justify-between items-center w-full"
                   >
-                    <span className="text-xl">{faq.question}</span>
+                    <p className="text-xl">{faq.question}</p>
 
                     {/* Plus / Minus Icon */}
                     <div className="w-10 h-10 flex justify-center items-center">
@@ -79,7 +79,7 @@ const FaqSection = () => {
                           ></div>
                       </div>
                     </div>
-                  </button>
+                  </div>
 
                   {/* FAQ Answer */}
                   <div
