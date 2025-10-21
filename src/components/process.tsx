@@ -6,7 +6,7 @@ import SectionLayout from "@/components/ui/SectionLayout";
 const Process = () => {
   return (
     <div>
-      <section className="section-v-space">
+      <section className="section-v-space !pt-[100px]">
         <div>
           <SectionLayout>
             <SectionHead

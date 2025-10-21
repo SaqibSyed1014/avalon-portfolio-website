@@ -41,7 +41,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, text, isExternal = false }) => 
 const Navbar: React.FC = () => {
   return (
     <nav
-      className="fixed top-0 right-0 left-0 z-10 w-full py-10 md:py-8"
+      className="fixed top-0 right-0 left-0 z-10 w-full py-10"
       style={{ background: "transparent" }}
     >
       <div className="mx-auto px-16">

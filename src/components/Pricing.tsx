@@ -1,12 +1,12 @@
 import React from "react";
 
+import { Button } from "@/components/ui";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
-import { Button } from "@/components/ui";
 
 const Pricing = () => {
   return (
-    <section className="section-v-space">
+    <section className="section-v-space !pt-[200px]">
       <div>
         <SectionLayout>
           <SectionHead

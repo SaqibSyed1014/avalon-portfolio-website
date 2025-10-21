@@ -10,6 +10,7 @@ import Works from "@/components/Works";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
+import FAQ from "@/components/FAQ";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <Process />
       <Pricing />
       <Testimonials />
+      <FAQ />
       <CTA />
       <Footer />
     </div>
