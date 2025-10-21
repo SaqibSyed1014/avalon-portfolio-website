@@ -95,7 +95,7 @@ const WorkProjects :React.FC = () => {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden">
-      <div className="h-[2180px]">
+      <div className="">
         <div className="flex flex-col gap-[250px]">
           <div className="pt-[100px]">
             <SectionLayout>
