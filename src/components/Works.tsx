@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
+import Marquee from "@/components/ui/Marquee";
 
 const Works = () => {
   const projects = [
@@ -59,11 +60,12 @@ const Works = () => {
           </SectionLayout>
 
           <div className="bg-secondary flex h-[160px] items-center overflow-hidden">
-            <ul className="flex gap-16 text-[46px] leading-[110%] text-black [&_li]:shrink-0">
-              <li>Achieve measurable results with stunning, uniquely designed websites</li>
-              <li>Achieve measurable results with stunning, uniquely designed websites</li>
-              <li>Achieve measurable results with stunning, uniquely designed websites</li>
-            </ul>
+            <div className="flex gap-16 text-[46px] leading-[110%] text-black [&_li]:shrink-0">
+              <Marquee gap={64} scrollBoost={false}>
+                <div>Achieve measurable results with stunning, uniquely designed websites</div>
+                <div>Achieve measurable results with stunning, uniquely designed websites</div>
+              </Marquee>
+            </div>
           </div>
         </div>
       </div>

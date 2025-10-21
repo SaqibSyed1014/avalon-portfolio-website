@@ -1,12 +1,33 @@
 import React from "react";
 import SectionLayout from "@/components/ui/SectionLayout";
 import SectionHead from "@/components/ui/SectionHead";
+import Marquee from "@/components/ui/Marquee";
 
 interface Testimonial {
   review: string;
   name: string;
   designation: string;
   image: string
+}
+
+const TestimonialItem :React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
+  return (
+    <div>
+      <div className="card-style flex flex-col justify-between h-[203px] w-[363px]">
+        <p className="text-secondary text-wrap">&#34;{testimonial.review}&#34;</p>
+        <div className="flex gap-3 items-center">
+          <div className="size-[55px] rounded-full overflow-hidden">
+            <img src={testimonial.image} alt="" className="size-full object-cover" />
+          </div>
+
+          <div>
+            <p>{testimonial.name}</p>
+            <p className="text-sm">{testimonial.designation}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 const Testimonials = () => {
@@ -55,40 +76,16 @@ const Testimonials = () => {
         </SectionLayout>
 
         <div className="flex flex-col gap-2.5">
-          <div className="flex gap-2.5">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-style flex flex-col justify-between h-[203px] w-[363px]">
-                <p className="text-secondary">&#34;{testimonial.review}&#34;</p>
-                <div className="flex gap-3 items-center">
-                  <div className="size-[55px] rounded-full overflow-hidden">
-                    <img src={testimonial.image} alt="" className="size-full object-cover" />
-                  </div>
-
-                  <div>
-                    <p>{testimonial.name}</p>
-                    <p className="text-sm">{testimonial.designation}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex gap-2.5">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-style flex flex-col justify-between h-[203px] w-[363px]">
-                <p className="text-secondary">&#34;{testimonial.review}&#34;</p>
-                <div className="flex gap-3 items-center">
-                  <div className="size-[55px] rounded-full overflow-hidden">
-                    <img src={testimonial.image} alt="" className="size-full object-cover" />
-                  </div>
-
-                  <div>
-                    <p>{testimonial.name}</p>
-                    <p className="text-sm">{testimonial.designation}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+            <Marquee speed={80} gap={10} scrollBoost={false}>
+              {testimonials.map((testimonial, index) => (
+                <TestimonialItem testimonial={testimonial} key={index} />
+              ))}
+            </Marquee>
+            <Marquee speed={80} gap={10} direction="right" scrollBoost={false}>
+              {testimonials.map((testimonial, index) => (
+                <TestimonialItem testimonial={testimonial} key={index} />
+              ))}
+            </Marquee>
         </div>
       </div>
     </section>

@@ -27,7 +27,7 @@ const faqs :FAQ[] = [
   }
 ]
 
-const Faq = () => {
+const FaqSection = () => {
 
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
@@ -56,7 +56,7 @@ const Faq = () => {
               return (
                 <div
                   key={index}
-                  className="py-2 border-b border-gray-300 overflow-hidden transition-all duration-300"
+                  className="py-2 border-b border-gray-300 overflow-hidden transition-all duration-300 cursor-pointer"
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
@@ -68,12 +68,12 @@ const Faq = () => {
                     <div className="w-10 h-10 flex justify-center items-center">
                       <div className="relative w-4 h-4">
                           <div
-                            className={`absolute top-1/2 left-0 w-full h-[2px] bg-white transition-transform duration-300 ${
+                            className={`absolute top-1/2 left-0 w-full h-[2px] bg-white transition-all duration-300 ${
                               isOpen ? "rotate-45 opacity-0" : "rotate-0 opacity-100"
                             }`}
                           ></div>
                           <div
-                            className={`absolute top-1/2 left-0 w-full h-[2px] bg-white transition-all duration-300 ${
+                            className={`absolute top-1/2 left-0 w-full h-[2px] bg-white transition-transform duration-300 ${
                               isOpen ? "" : "-rotate-90"
                             }`}
                           ></div>
@@ -99,4 +99,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default FaqSection;
