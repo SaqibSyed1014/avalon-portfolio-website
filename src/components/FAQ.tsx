@@ -50,13 +50,13 @@ const FaqSection = () => {
             isCentered={true}
           />
 
-          <div className="">
+          <div className="max-w-[1000px] w-full mx-auto">
             {faqs.map((faq, index) => {
               const isOpen = openIndexes.includes(index);
               return (
                 <div
                   key={index}
-                  className="py-2 border-b border-gray-300 overflow-hidden transition-all duration-300 cursor-pointer"
+                  className="py-2 border-b border-white last:border-0 overflow-hidden transition-all duration-300 cursor-pointer"
                 >
                   <div
                     onClick={() => toggleFAQ(index)}
