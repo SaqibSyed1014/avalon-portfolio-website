@@ -34,7 +34,7 @@ const Benefits = () => {
             description="When it comes to web design, I understand that every business is unique, and so should be its online presence. Here’s why partnering with me can take your startup to the next level:"
           />
 
-          <div className="flex gap-5">
+          <div className="flex flex-col xl:flex-row gap-5">
             {benefits.map((benefit, index) => (
               <div
                 key={index}

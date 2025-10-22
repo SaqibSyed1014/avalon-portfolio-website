@@ -19,12 +19,19 @@
 @utility container {
         width: 100%;
         margin: 0 auto;
+        max-width: 1200px;
 
         @variant sm {
-            max-width: 540px;
+            padding-left: 24px;
+            padding-right: 24px;
         }
-        @variant lg {
-            max-width: 1200px;
+        @variant md {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        @variant xl {
+            padding-left: 0;
+            padding-right: 0;
         }
 }
 
@@ -58,7 +65,7 @@ p{
     @apply normal-case;
 }
 .heading-style-1{
-    @apply text-[56px] leading-[110%];
+    @apply text-[38px] lg:text-[48px] xl:text-[56px] leading-[110%];
 }
 .heading-style-2{
     @apply text-[32px] leading-[110%];

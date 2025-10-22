@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="px-16 py-[60px]">
       <div className="">
         <div className="flex justify-between items-start">
-          <div className="space-y-[18px]">
+          <div className="space-y-[18px] hidden xl:block">
             <div className="uppercase text-2xl">
               Mark Avalon
             </div>

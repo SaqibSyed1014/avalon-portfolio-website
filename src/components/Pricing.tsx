@@ -17,7 +17,7 @@ const Pricing = () => {
             descWidth={'580px'}
           />
 
-          <div className="flex justify-center gap-5">
+          <div className="flex flex-col xl:flex-row justify-center gap-5">
             <div className="relative group/item p-5 border border-white/25 rounded-md custom-gradient hover:scale-[1.02] hover:translate-y-[-10px] transition-all">
               <div className="space-y-[26px] relative z-10">
                 <div className="space-y-3">

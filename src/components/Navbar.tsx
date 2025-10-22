@@ -41,10 +41,10 @@ const NavLink: React.FC<NavLinkProps> = ({ href, text, isExternal = false }) => 
 const Navbar: React.FC = () => {
   return (
     <nav
-      className="fixed top-0 right-0 left-0 z-10 w-full py-10"
+      className="fixed top-0 right-0 left-0 z-10 w-full py-5 px-6 md:p-8 xl:py-10"
       style={{ background: "transparent" }}
     >
-      <div className="mx-auto px-16">
+      <div className="mx-auto xl:px-16">
         <div className="flex items-center justify-between">
           {/* Logo/Brand Link */}
           <Link
@@ -55,10 +55,15 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex space-x-8 md:space-x-[22px]">
+          <div className="hidden xl:flex space-x-8 md:space-x-[22px]">
             <NavLink href="/" text="Work" />
             <NavLink href="/" text="About" />
             <NavLink href="https://calendly.com" text="Get in touch" isExternal={true} />
+          </div>
+
+          <div className="flex xl:hidden h-11 w-11 overflow-hidden relative">
+            <div className="h-0.5 w-full absolute left-0 top-[35%] bg-white"></div>
+            <div className="h-0.5 w-full absolute left-0 top-[65%] bg-white"></div>
           </div>
         </div>
       </div>

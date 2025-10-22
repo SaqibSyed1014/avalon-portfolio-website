@@ -54,7 +54,7 @@ const ProcessStep :React.FC<ProcessStepProps> = ({ index, step }) => {
         <div className="space-y-2.5">
           <h3 className="heading-style-2">{step.title}</h3>
           {/*Description text*/}
-          <div className="desc overflow-hidden h-0">
+          <div className="desc overflow-hidden xl:h-0">
             <p>{step.description}</p>
           </div>
         </div>
@@ -165,7 +165,13 @@ const Process = () => {
             />
 
             <div className="relative z-10">
-              <div ref={cardsRef} className="flex gap-[90px]">
+              <div ref={cardsRef} className="hidden xl:flex gap-[90px]">
+                {processSteps.map((step, i) => (
+                  <ProcessStep key={i} step={step} index={i} />
+                ))}
+              </div>
+
+              <div className="flex flex-col xl:hidden gap-5">
                 {processSteps.map((step, i) => (
                   <ProcessStep key={i} step={step} index={i} />
                 ))}

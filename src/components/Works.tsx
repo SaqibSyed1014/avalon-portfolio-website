@@ -102,9 +102,27 @@ const WorkProjects :React.FC = () => {
               <SectionHead subText="(1) Work" heading="My Recent Projects" />
 
               {/*Scroll this section horizontally when user scrolls*/}
-              <div ref={horizontalRef} className="flex h-[403px] gap-5 will-change-transform">
+              <div ref={horizontalRef} className="hidden xl:flex h-[403px] gap-5 will-change-transform">
                 {projects.map((project, index) => (
                   <div key={index} className="h-full w-[49%] flex-none">
+                    <div className="flex h-full flex-col gap-2 rounded-md border border-white/25 p-1.5">
+                      <div className="overflow-hidden rounded-[2px] border border-white/15">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={project.image}
+                          alt={project.alt}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      <h3 className="text-secondary text-xl">{project.title}</h3>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:hidden gap-5">
+                {projects.map((project, index) => (
+                  <div key={index} className="">
                     <div className="flex h-full flex-col gap-2 rounded-md border border-white/25 p-1.5">
                       <div className="overflow-hidden rounded-[2px] border border-white/15">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -127,7 +145,7 @@ const WorkProjects :React.FC = () => {
           </div>
 
           <div className="bg-secondary flex h-[160px] items-center overflow-hidden">
-            <div className="flex gap-16 text-[46px] leading-[110%] text-black [&_li]:shrink-0">
+            <div className="flex gap-16 text-[30px] lg:text-[36px] xl:text-[46px] leading-[110%] text-black [&_li]:shrink-0">
               <Marquee gap={64} scrollBoost={false}>
                 <div>Achieve measurable results with stunning, uniquely designed websites</div>
                 <div>Achieve measurable results with stunning, uniquely designed websites</div>
