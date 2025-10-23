@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import FooterBG from "@/components/FooterBG";
 import CTA from "@/components/CTA";

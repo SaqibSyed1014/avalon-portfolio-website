@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import SectionHead from "@/components/ui/SectionHead";
