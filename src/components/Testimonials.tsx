@@ -76,7 +76,9 @@ const Testimonials = () => {
           />
         </SectionLayout>
 
-        <div className="flex flex-col gap-2.5">
+        <div className="flex flex-col gap-2.5"
+          style={{ maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgb(0, 0, 0) 23%, rgb(0, 0, 0) 77%, rgba(0, 0, 0, 0.2) 100%)" }}
+        >
             <Marquee speed={80} gap={10} scrollBoost={false}>
               {testimonials.map((testimonial, index) => (
                 <TestimonialItem testimonial={testimonial} key={index} />

@@ -7,23 +7,23 @@ const Content = () => {
     <section className="py-[60px]">
       <div className="container">
         <div className="space-y-[70px]">
-          <div className="flex gap-10">
+          <div className="flex gap-5 lg:gap-10 max-lg:justify-between">
             <div className="space-y-1.5">
               <p className="opacity-80">Year</p>
-              <p className="text-2xl">Duration</p>
+              <p className="text-xl lg:text-2xl">Duration</p>
             </div>
             <div className="space-y-1.5">
               <p className="opacity-80">Duration</p>
-              <p className="text-2xl">6 weeks</p>
+              <p className="text-xl lg:text-2xl">6 weeks</p>
             </div>
             <div className="space-y-1.5">
               <p className="opacity-80">Category</p>
-              <p className="text-2xl">Business</p>
+              <p className="text-xl lg:text-2xl">Business</p>
             </div>
           </div>
 
           <div className="w-full max-w-[850px]">
-            <div className="space-y-5 text-xl">
+            <div className="space-y-5 text-md lg:text-xl">
               <p>
                 Quantum struggled with an outdated website that did not reflect their cutting-edge products and
                 services.

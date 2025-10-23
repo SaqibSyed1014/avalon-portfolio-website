@@ -31,7 +31,7 @@ const Hero = () => {
 
       <div className="container">
         <div className="card-style !p-1.5">
-          <div className="overflow-hidden rounded-md h-[670px]">
+          <div className="overflow-hidden rounded-md h-[260px] lg:h-[550px] xl:h-[670px]">
             <img src="https://framerusercontent.com/images/e633Jp9rA7J1z8Zq58eJTQNeco.jpg?scale-down-to=4096" alt=""
                   className="w-full h-full object-cover" />
           </div>

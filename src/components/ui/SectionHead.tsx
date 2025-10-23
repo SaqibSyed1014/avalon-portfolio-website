@@ -3,8 +3,8 @@ import React, { FC } from "react";
 type TProps = Readonly<ISectionHead>;
 const SectionHead: FC<TProps> = ({ subText, heading, description, isCentered = false, descWidth = 'max-w-[800px]' }) => {
   return (
-    <div className={`${isCentered ? "text-center" : ""} space-y-2.5`}>
-      <span className="text-secondary">{subText}</span>
+    <div className={`${isCentered ? "text-center" : ""} space-y-[10px]`}>
+      <span className="text-secondary font-extralight">{subText}</span>
       <div className="space-y-5">
         <h2 className="section-heading">{heading}</h2>
         {description && (
