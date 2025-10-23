@@ -39,7 +39,7 @@ const RelevantWork = () => {
       <div className="container">
         <div className="flex flex-col gap-10">
           <div className="flex justify-between items-center">
-            <h2 className="Section-heading">More Projects</h2>
+            <h2 className="section-heading">More Projects</h2>
             <Button>View More</Button>
           </div>
 
