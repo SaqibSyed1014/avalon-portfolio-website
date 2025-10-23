@@ -46,6 +46,8 @@ const WorkProjects :React.FC = () => {
   const animationRef = useRef<gsap.core.Tween | null>(null);
 
   useEffect(() => {
+    if (window.innerWidth < 1280) return;
+
     const section = sectionRef.current;
     const scrollContent = horizontalRef.current;
     if (!section || !scrollContent) return;
@@ -96,8 +98,8 @@ const WorkProjects :React.FC = () => {
   return (
     <section ref={sectionRef} className="relative overflow-hidden">
       <div className="">
-        <div className="flex flex-col gap-[250px]">
-          <div className="pt-[100px]">
+        <div className="flex flex-col gap-[100px] xl:gap-[250px]">
+          <div className="lg:pt-[100px]">
             <SectionLayout>
               <SectionHead subText="(1) Work" heading="My Recent Projects" />
 
@@ -120,10 +122,10 @@ const WorkProjects :React.FC = () => {
                 ))}
               </div>
 
-              <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:hidden gap-5">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:hidden gap-2.5">
                 {projects.map((project, index) => (
                   <div key={index} className="">
-                    <div className="flex h-full flex-col gap-2 rounded-md border border-white/25 p-1.5">
+                    <div className="flex h-full flex-col gap-2 rounded-md border border-white/25 p-1.5 max-lg:h-[263px]">
                       <div className="overflow-hidden rounded-[2px] border border-white/15">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -144,7 +146,7 @@ const WorkProjects :React.FC = () => {
             </SectionLayout>
           </div>
 
-          <div className="bg-secondary flex h-[160px] items-center overflow-hidden">
+          <div className="bg-secondary flex items-center overflow-hidden h-[78px] lg:h-[160px]">
             <div className="flex gap-16 text-[30px] lg:text-[36px] xl:text-[46px] leading-[110%] text-black [&_li]:shrink-0">
               <Marquee gap={64} scrollBoost={false}>
                 <div>Achieve measurable results with stunning, uniquely designed websites</div>

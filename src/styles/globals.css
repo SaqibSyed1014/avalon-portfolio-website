@@ -20,12 +20,10 @@
         width: 100%;
         margin: 0 auto;
         max-width: 1200px;
+        padding-left: 24px;
+        padding-right: 24px;
 
-        @variant sm {
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-        @variant md {
+        @variant lg {
             padding-left: 32px;
             padding-right: 32px;
         }
@@ -44,6 +42,9 @@
     }
 @utility card-style{
         @apply p-5 border border-white/25 rounded-md custom-gradient;
+}
+@utility mobile-nav-bg{
+    background: linear-gradient(rgba(11, 11, 15, 0.8) 32.4324%, rgba(11, 11, 15, 0) 100%) rgba(0, 0, 0, 0);
 }
 
 /*@media (prefers-color-scheme: dark) {*/
@@ -65,10 +66,10 @@ p{
     @apply normal-case;
 }
 .heading-style-1{
-    @apply text-[38px] lg:text-[48px] xl:text-[56px] leading-[110%];
+    @apply text-[38px] lg:text-[48px] xl:text-[56px] leading-[132%] lg:leading-[110%];
 }
 .heading-style-2{
-    @apply text-[32px] leading-[110%];
+    @apply text-xl lg:text-[32px] leading-[110%];
 }
 
 .hero-avatar{
@@ -76,7 +77,7 @@ p{
 }
 
 .section-v-space{
-    @apply pt-40 pb-[100px];
+    @apply py-[100px] lg:pt-40;
 }
 
 .button-shadow{

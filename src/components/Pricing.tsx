@@ -14,7 +14,7 @@ const Pricing = () => {
             heading="How much does it cost?"
             description="Investing in a professional, custom-designed website is a crucial step for any startup looking to establish a strong online presence. "
             isCentered={true}
-            descWidth={'580px'}
+            descWidth="max-w-[470px] lg:max-w-[580px]"
           />
 
           <div className="flex flex-col xl:flex-row justify-center gap-5">
@@ -22,7 +22,7 @@ const Pricing = () => {
               <div className="space-y-[26px] relative z-10">
                 <div className="space-y-3">
                   <h4 className="text-2xl">Landing Page Design</h4>
-                  <h3 className="text-[46px] leading-[110%]">€999-1999</h3>
+                  <h3 className="text-[30px] lg:text-[36px] xl:text-[46px] leading-[110%]">€999-1999</h3>
                   <p>Get noticed with a sleek and engaging landing page.</p>
                 </div>
 

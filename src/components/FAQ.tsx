@@ -46,7 +46,7 @@ const FaqSection = () => {
             subText="(5) FAQ"
             heading="Frequeantly asked questions"
             description="Here are some of the most common questions I get about my web design services:"
-            descWidth="400px"
+            descWidth="max-w-full lg:max-w-[400px]"
             isCentered={true}
           />
 
@@ -62,7 +62,7 @@ const FaqSection = () => {
                     onClick={() => toggleFAQ(index)}
                     className="flex justify-between items-center w-full"
                   >
-                    <p className="text-xl">{faq.question}</p>
+                    <p className="text-md lg:text-xl">{faq.question}</p>
 
                     {/* Plus / Minus Icon */}
                     <div className="w-10 h-10 flex justify-center items-center">
@@ -87,7 +87,7 @@ const FaqSection = () => {
                       isOpen ? " max-h-[40px]" : "max-h-0"
                     }`}
                   >
-                    <p className="pt-4">{faq.answer}</p>
+                    <p className="pt-4 opacity-80">{faq.answer}</p>
                   </div>
                 </div>
               );

@@ -37,7 +37,7 @@ const processSteps :ProcessStep[] = [
 
 const ProcessStep :React.FC<ProcessStepProps> = ({ index, step }) => {
   return (
-    <div className="card-style relative w-[490px] h-[242px] shrink-0">
+    <div className="card-style relative xl:w-[490px] h-[242px] shrink-0">
       <div className="flex flex-col justify-between relative z-10 h-full">
         <div className="flex justify-between">
           <div className="h-8 w-8">
@@ -75,6 +75,8 @@ const Process = () => {
   const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.innerWidth < 1280) return;
+
     const section = sectionRef.current;
     const cards = cardsRef.current;
     const bg = bgRef.current;
@@ -155,13 +157,14 @@ const Process = () => {
 
   return (
     <div>
-      <section ref={sectionRef} className="section-v-space !pt-[100px] overflow-hidden relative">
+      <section ref={sectionRef} className="section-v-space max-sm:!pb-0 !pt-[100px] overflow-hidden relative">
         <div className="relative z-10">
           <SectionLayout>
             <SectionHead
               subText="(3) Process"
               heading="How it goes"
               description="Crafting a standout website involves a detailed and collaborative process. Here’s how we achieve your vision:"
+              descWidth="max-w-[450px] lg:max-w-[550px] xl:max-w-[800px]"
             />
 
             <div className="relative z-10">
@@ -178,14 +181,14 @@ const Process = () => {
               </div>
             </div>
 
-            <div className="h-0.5 absolute bg-[#29293d] left-[-100px] right-[-100px] bottom-[119px] overflow-hidden ">
+            <div className="hidden xl:block h-0.5 absolute bg-[#29293d] left-[-100px] right-[-100px] bottom-[119px] overflow-hidden ">
               <div className="absolute h-0.5 bg-white left-0 w-[40%]"></div>
             </div>
           </SectionLayout>
         </div>
 
         {/*BG Image*/}
-        <div ref={bgRef} className="opacity-60 absolute top-0 bottom-0 left-0 right-[-960px]">
+        <div ref={bgRef} className="max-lg:hidden opacity-60 absolute top-0 bottom-0 left-0 right-[-960px]">
           <img
               src="https://framerusercontent.com/images/3vmeJmumAbTG3fibdczaTt2VJt8.png"
                alt=""

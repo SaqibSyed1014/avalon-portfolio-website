@@ -1,19 +1,32 @@
 "use client";
 
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect } from "react";
 
-import { Button } from "@/components/ui";
 import ProjectsMarquee from "@/components/ProjectsMarquee";
+import { Button } from "@/components/ui";
 
 const Hero: React.FC = () => {
+  useEffect(() => {
+    gsap.to('.animate-pinging', {
+      filter: 'blur(10px)',
+      scale: 2,
+      opacity: .7,
+      repeat: -1,
+      duration: .5,
+      ease: "none",
+      repeatDelay: 1,
+    });
+  }, []);
+
   return (
     <section>
       <div className="section-v-space !pt-[140px]">
         <div className="container">
-          <div className="relative z-10 flex flex-col items-start gap-[36px] font-light">
+          <div className="relative z-20 flex flex-col items-start gap-[36px] font-light">
             <div className="flex items-center gap-6">
               {/* Stack: Image and Name/Status */}
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-4 lg:gap-6">
                 <div className="h-11 w-11 lg:h-[50px] lg:w-[50px] flex-shrink-0 overflow-hidden rounded-full">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -30,13 +43,17 @@ const Hero: React.FC = () => {
 
                   {/* Available for work Status (Pulsing Dot) */}
                   <div className="flex items-center gap-[10px]">
-                    <div className="relative flex h-3 w-3">
-                      {/* Pulsing effect using animate-ping (Requires Tailwind animation config) */}
+                    <div className="relative flex h-2.5 w-2.5">
                       <span
-                        className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                        className="absolute inline-flex h-full w-full animate-pinging rounded-full bg-[#7cf47e] opacity-20"></span>
                       {/* Solid dot */}
                       <span
-                        className="relative inline-flex h-3 w-3 rounded-full bg-green-500 shadow-md shadow-green-500/50"></span>
+                        className="relative inline-flex h-2.5 w-2.5 rounded-full"
+                        style={{
+                          background: "radial-gradient(50% 50%, rgb(49, 238, 51) 0%, rgb(124, 244, 126) 100%)",
+                          boxShadow: "rgba(124, 244, 126, 0.5) 0px 0px 20px 0px"
+                        }}
+                      ></span>
                     </div>
                     <p>Available for work</p>
                   </div>

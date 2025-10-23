@@ -72,6 +72,7 @@ const Testimonials = () => {
             subText="(5) Testimonials"
             heading="What others think?"
             description="Hearing from my clients directly is the best way to understand the impact of my work."
+            descWidth="max-w-full lg:max-w-[400px] xl:max-w-[800px]"
           />
         </SectionLayout>
 
@@ -80,8 +81,14 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <TestimonialItem testimonial={testimonial} key={index} />
               ))}
+              {testimonials.map((testimonial, index) => (
+                <TestimonialItem testimonial={testimonial} key={index} />
+              ))}
             </Marquee>
             <Marquee speed={80} gap={10} direction="right" scrollBoost={false}>
+              {testimonials.map((testimonial, index) => (
+                <TestimonialItem testimonial={testimonial} key={index} />
+              ))}
               {testimonials.map((testimonial, index) => (
                 <TestimonialItem testimonial={testimonial} key={index} />
               ))}

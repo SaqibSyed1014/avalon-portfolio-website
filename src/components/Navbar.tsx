@@ -1,10 +1,8 @@
 "use client";
-// Optimized component using clean, semantic Tailwind CSS classes and TypeScript.
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
-// Define the shape of props for the NavLink component
 interface NavLinkProps {
   href: string;
   text: string;
@@ -13,7 +11,7 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, text, isExternal = false }) => {
   // Consolidating all link styles into commonClasses
-  const commonClasses = "text-xl font-light uppercase transition duration-200 group relative";
+  const commonClasses = "text-xl lg:text-2xl xl:text-xl font-light uppercase transition duration-200 group relative";
 
   // Underline span styles
   const underlineClasses =
@@ -39,34 +37,55 @@ const NavLink: React.FC<NavLinkProps> = ({ href, text, isExternal = false }) => 
 };
 
 const Navbar: React.FC = () => {
+  const [isNavOpened, setNavOpened] = useState<boolean>(false);
   return (
     <nav
-      className="fixed top-0 right-0 left-0 z-10 w-full py-5 px-6 md:p-8 xl:py-10"
+      className={
+      `fixed top-0 right-0 left-0 z-50 w-full px-6 py-5 lg:p-8 xl:px-16 xl:py-10 xl:mix-blend-difference transition-all ${isNavOpened ? '!pb-[60px] lg:!pb-20' : ''}`
+    }
       style={{ background: "transparent" }}
     >
-      <div className="mx-auto xl:px-16">
-        <div className="flex items-center justify-between">
-          {/* Logo/Brand Link */}
-          <Link
-            href="/"
-            className="text-xl font-light tracking-wider uppercase transition duration-150 hover:text-gray-300"
-          >
-            Mark Avalon
-          </Link>
+      <div className="relative z-10 mx-auto w-full max-w-[1600px]">
+        <div className="flex flex-col gap-[82px]">
+          <div className="flex items-center justify-between">
+            {/* Logo/Brand Link */}
+            <Link
+              href="/"
+              className="text-xl font-light tracking-wider uppercase transition duration-150 hover:text-gray-300"
+            >
+              Mark Avalon
+            </Link>
 
-          {/* Navigation Links */}
-          <div className="hidden xl:flex space-x-8 md:space-x-[22px]">
+            {/* Navigation Links */}
+            <div className="hidden space-x-8 md:space-x-[22px] xl:flex">
+              <NavLink href="/" text="Work" />
+              <NavLink href="/" text="About" />
+              <NavLink href="https://calendly.com" text="Get in touch" isExternal={true} />
+            </div>
+
+            <div
+              onClick={() => setNavOpened(!isNavOpened)}
+              className="relative flex h-11 w-11 overflow-hidden xl:hidden"
+            >
+              <div
+                className={`absolute left-0 h-0.5 w-full bg-white transition-all ${isNavOpened ? "top-1/2 rotate-[30deg]" : "top-[38%]"}`}
+              ></div>
+              <div
+                className={`absolute left-0 h-0.5 w-full bg-white transition-all ${isNavOpened ? "top-1/2 rotate-[-30deg]" : "top-[63%]"}`}
+              ></div>
+            </div>
+          </div>
+
+          <div
+            className={`flex flex-col items-center gap-9 transition-all duration-700 ${isNavOpened ? "" : "max-h-0 overflow-hidden"}`}
+          >
             <NavLink href="/" text="Work" />
             <NavLink href="/" text="About" />
             <NavLink href="https://calendly.com" text="Get in touch" isExternal={true} />
           </div>
-
-          <div className="flex xl:hidden h-11 w-11 overflow-hidden relative">
-            <div className="h-0.5 w-full absolute left-0 top-[35%] bg-white"></div>
-            <div className="h-0.5 w-full absolute left-0 top-[65%] bg-white"></div>
-          </div>
         </div>
       </div>
+      <div className={`absolute inset-0 ${isNavOpened ? "bg-black" : "mobile-nav-bg"}`}></div>
     </nav>
   );
 };

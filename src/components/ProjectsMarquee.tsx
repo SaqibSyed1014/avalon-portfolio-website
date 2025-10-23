@@ -24,7 +24,7 @@ const ProjectsMarquee = () => {
 
   return (
     <ul className="flex gap-5">
-      <Marquee speed={50} gap={40} scrollBoost={true}>
+      <Marquee speed={50} gap={24} scrollBoost={true}>
         {projectsSecreenshots.map((ss, index) => {
           return (
           <div key={index}>
