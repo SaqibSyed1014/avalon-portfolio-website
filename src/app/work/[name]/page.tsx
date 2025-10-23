@@ -2,15 +2,21 @@
 
 import React from "react";
 
-import HeroBGAnimation from "@/components/HeroBGAnimation";
-import CTAFooter from "@/components/layout/CTA&Footer";
+import Hero from "@/app/work/components/Hero";
+
 import PageWrapper from "@/components/layout/PageWrapper";
-import Navbar from "@/components/Navbar";
+import Content from "@/app/work/components/Content";
+import RelevantWork from "@/app/work/components/RelevantWork";
+import Gallery from "@/app/work/components/Gallery";
+
 
 const Page = () => {
   return (
     <PageWrapper>
-      <div></div>
+      <Hero />
+      <Content />
+      <Gallery />
+      <RelevantWork />
     </PageWrapper>
   );
 };

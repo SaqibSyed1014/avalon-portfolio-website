@@ -134,8 +134,7 @@ const WorkProjects :React.FC = () => {
 
               <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:hidden gap-2.5">
                 {projects.map((project, index) => (
-                  <div key={index} className="">
-                    <div className="flex h-full flex-col gap-2 rounded-md border border-white/25 p-1.5 max-lg:h-[263px]">
+                    <Link key={index} href={`/work/${project.id}`} className="flex h-full flex-col gap-2 rounded-md border border-white/25 p-1.5 max-lg:h-[263px]">
                       <div className="overflow-hidden rounded-[2px] border border-white/15">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -145,8 +144,7 @@ const WorkProjects :React.FC = () => {
                         />
                       </div>
                       <h3 className="text-secondary text-xl">{project.title}</h3>
-                    </div>
-                  </div>
+                    </Link>
                 ))}
               </div>
 

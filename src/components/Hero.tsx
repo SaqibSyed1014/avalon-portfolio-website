@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
               </h1>
 
               {/* Description */}
-              <p className="text-secondary max-w-[300px] md:max-w-[600px] lg:max-w-[520px] xl:max-w-3xl text- opacity-80 lg:text-xl">
+              <p className="hero-description">
                 I design unique websites that turn start-ups into market leaders. Let&#39;s create a
                 digital presence that not only looks amazing but also drives real results for your
                 business.

@@ -6,7 +6,7 @@ const SectionHead: FC<TProps> = ({ subText, heading, description, isCentered = f
     <div className={`${isCentered ? "text-center" : ""} space-y-2.5`}>
       <span className="text-secondary">{subText}</span>
       <div className="space-y-5">
-        <h2 className="text-[30px] lg:text-[36px] xl:text-[46px] leading-[110%]">{heading}</h2>
+        <h2 className="section-heading">{heading}</h2>
         {description && (
           <p
             className={`w-full text-md lg:text-xl leading-[130%] ${descWidth} ${isCentered ? 'mx-auto':''}`}
