@@ -2,6 +2,8 @@ import React from "react";
 
 import Marquee from "@/components/ui/Marquee";
 
+import useFadeUpAnimation from "@/lib/utils/fadeup";
+
 const ProjectsMarquee = () => {
   const projectsSecreenshots = [
     {
@@ -22,8 +24,10 @@ const ProjectsMarquee = () => {
     }
   ]
 
+  useFadeUpAnimation();
+
   return (
-    <ul className="flex gap-5">
+    <div className="flex gap-5 fade-in">
       <Marquee speed={50} gap={24} scrollBoost={true}>
         {projectsSecreenshots.map((ss, index) => {
           return (
@@ -38,7 +42,7 @@ const ProjectsMarquee = () => {
         })
         }
       </Marquee>
-    </ul>
+    </div>
   )
 };
 
