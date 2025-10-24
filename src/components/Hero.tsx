@@ -25,13 +25,13 @@ const Hero: React.FC = () => {
 
   return (
     <section>
-      <div className="section-v-space !pt-[140px]">
+      <div className="section-v-space pb-[100px] !pt-[140px]">
         <div className="container">
           <div className="relative z-20 flex flex-col items-start gap-[36px] font-light">
               <div className="flex items-center gap-6 fade-up" data-delay={0.2}>
                 {/* Stack: Image and Name/Status */}
                 <div className="flex items-center gap-4 lg:gap-6">
-                  <div className="h-11 w-11 lg:h-[50px] lg:w-[50px] flex-shrink-0 overflow-hidden rounded-full">
+                  <div className="h-11 w-11 lg:h-[50px] lg:w-[51px] flex-shrink-0 overflow-hidden rounded-full">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="https://framerusercontent.com/images/vZADFl4NEYLJ11AxhBHI0iET1U.png"
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="h-10 w-10 xl:h-[56px] xl:w-[56px] animate-[spin_7s_linear_infinite] duration-[8s]">
+                <div className="h-10 w-10 lg:h-[56px] lg:w-[56px] animate-[spin_7s_linear_infinite] duration-[8s]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="https://framerusercontent.com/images/QQ8Ta0XApGQug7OqXmDapa7BIA.svg"
@@ -81,11 +81,13 @@ const Hero: React.FC = () => {
               </h1>
 
               {/* Description */}
-              <p className="hero-description fade-up" data-delay={0.7}>
-                I design unique websites that turn start-ups into market leaders. Let&#39;s create a
-                digital presence that not only looks amazing but also drives real results for your
-                business.
-              </p>
+              <div className="fade-up" data-delay={0.7}>
+                <p className="hero-description">
+                  I design unique websites that turn start-ups into market leaders. Let&#39;s create a
+                  digital presence that not only looks amazing but also drives real results for your
+                  business.
+                </p>
+              </div>
             </div>
 
             <div className="fade-up" data-delay={0.9}>

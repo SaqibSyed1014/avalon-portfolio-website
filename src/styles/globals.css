@@ -20,8 +20,13 @@
         width: 100%;
         margin: 0 auto;
         max-width: 1200px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @variant md {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
 
         @variant lg {
             padding-left: 32px;
@@ -63,7 +68,7 @@ body {
 }
 
 p{
-    @apply normal-case;
+    @apply normal-case leading-[130%];
 }
 .heading-style-1{
     @apply text-[38px] lg:text-[48px] xl:text-[56px] leading-[132%] lg:leading-[110%];
@@ -83,20 +88,20 @@ p{
 }
 
 .section-v-space{
-    @apply py-[100px] lg:pt-40;
+    @apply pt-[100px] lg:pt-40;
 }
 
 
 .button-shadow:hover{
-    animation: pulse-shadow 3s infinite reverse ease-in-out;
+    animation: pulse-shadow 2s infinite reverse ease-in-out;
 }
 
 @keyframes pulse-shadow {
     0% {
-        box-shadow: rgba(255, 255, 255, 0.2) 0 1px 24px 0;
+        box-shadow: rgba(255, 255, 255, 0.1) 0 1px 24px 0;
     }
     50% {
-        box-shadow: rgba(255, 255, 255, 0.5) 0 1px 24px 0;
+        box-shadow: rgba(255, 255, 255, 0.6) 0 1px 24px 0;
     }
     100% {
         box-shadow: rgba(255, 255, 255, 0.2) 0 1px 24px 0;

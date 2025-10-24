@@ -2,11 +2,13 @@
 
 import React, { FC } from "react";
 
-type TProps = Readonly<IChildren>;
-const SectionLayout: FC<TProps> = ({ children }) => {
+type TProps = Readonly<IClassNameWithChildren>;
+const SectionLayout: FC<TProps> = ({ children, className }) => {
   return (
     <div className="container">
-      <div className="flex flex-col gap-[42px] lg:gap-[60px]">{children}</div>
+      <div className={`flex flex-col gap-[42px] lg:gap-[60px] ${className}`}>
+        {children}
+      </div>
     </div>
   );
 };

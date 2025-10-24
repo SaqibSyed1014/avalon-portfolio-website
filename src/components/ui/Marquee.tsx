@@ -2,12 +2,15 @@
 
 import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface MarqueeProps {
   children: React.ReactNode;
   direction?: "left" | "right";
-  speed?: number; // pixels per second
-  gap?: number; // px gap between items
+  speed?: number;
+  gap?: number;
   scrollBoost?: boolean;
 }
 
@@ -20,59 +23,89 @@ const Marquee = ({
                                   gap = 40,
                                   scrollBoost = true,
                                 }: MarqueeProps) => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const tlRef = useRef<gsap.core.Tween | null>(null);
+  const stRef = useRef<ScrollTrigger | null>(null);
   const [ready, setReady] = useState(false);
-  const widthRef = useRef<number>(0);
-  const lastScrollY = useRef<number>(0);
-  const resizeRaf = useRef<number | null>(null);
 
-  // measure sizes and (re)create animation
   const setup = () => {
-    const container = containerRef.current;
+    const track = wrapperRef.current;
     const content = contentRef.current;
-    if (!container || !content) return;
+    if (!track || !content) return;
 
-    // ensure children are laid out before measuring
-    const contentRect = content.getBoundingClientRect();
-    const itemsWidth = Math.round(contentRect.width);
-    const totalWidth = itemsWidth + gap;
+    const itemsWidth = content.scrollWidth;
+    const totalWidth = Math.round(itemsWidth + gap);
 
-    // store measured width
-    widthRef.current = totalWidth;
+    if (tlRef.current) tlRef.current.kill();
+    if (stRef.current) stRef.current.kill();
 
-    // kill previous
-    if (tlRef.current) {
-      tlRef.current.kill();
-      tlRef.current = null;
-    }
-
-    // place two copies inline (we render them in JSX); animate the track (container's first child)
-    // For left: x goes 0 -> -totalWidth
-    // For right: x goes -totalWidth -> 0
     const dirIsLeft = direction === "left";
     const fromX = dirIsLeft ? 0 : -totalWidth;
     const toX = dirIsLeft ? -totalWidth : 0;
-    const duration = totalWidth / Math.max(1, Math.abs(speed)); // seconds
+    const duration = Math.max(4, totalWidth / Math.max(1, Math.abs(speed)));
 
-    // create tween on container's inner track
     tlRef.current = gsap.fromTo(
-      container,
+      track,
       { x: fromX },
       {
         x: toX,
         ease: "none",
-        repeat: -1,
         duration,
-        overwrite: true,
+        repeat: -1,
       }
     );
 
-    // ensure it moves immediately
     tlRef.current.timeScale(1);
-
     setReady(true);
+
+    if (scrollBoost) {
+      stRef.current = ScrollTrigger.create({
+        start: 0,
+        end: "max",
+        onUpdate(self) {
+          if (!tlRef.current) return;
+
+          const v = self.getVelocity();
+          // Ignore small scroll jitter
+          if (Math.abs(v) < 20) return;
+
+          const sensitivity = 0.007; // increase for stronger response
+          const boost = clamp(Math.abs(v) * sensitivity, 0, 2.5);
+
+          const dirIsLeft = direction === "left";
+
+          // When scrolling down (v > 0): speed up in base direction
+          // When scrolling up (v < 0): speed up in opposite direction
+          const scrollDown = v > 0;
+
+          const reverseBoost = boost * 0.4;
+
+          const targetScale = dirIsLeft
+            ? scrollDown
+              ? 1 + boost // down → faster left
+              : -1 - reverseBoost // up → faster right
+            : scrollDown
+              ? -1 - boost // down → faster right
+              : 1 + reverseBoost; // up → faster left
+
+          gsap.to(tlRef.current, {
+            timeScale: targetScale,
+            duration: 0.25,
+            ease: "power2.out",
+            overwrite: true,
+            onComplete: () => {
+              // smoothly return to base speed
+              gsap.to(tlRef.current!, {
+                timeScale: dirIsLeft ? 1 : -1,
+                duration: 1,
+                ease: "power3.out",
+              });
+            },
+          });
+        },
+      });
+    }
   };
 
   useLayoutEffect(() => {
@@ -81,88 +114,28 @@ const Marquee = ({
   }, [direction, speed, gap]);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (resizeRaf.current) cancelAnimationFrame(resizeRaf.current);
-      resizeRaf.current = requestAnimationFrame(() => {
-        setup();
-      });
-    };
-    window.addEventListener("resize", handleResize);
-    // initial measure after fonts/images load
-    const loadHandler = () => setup();
-    window.addEventListener("load", loadHandler);
-
+    const onResize = () => requestAnimationFrame(() => setup());
+    window.addEventListener("resize", onResize);
+    window.addEventListener("load", onResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("load", loadHandler);
-      if (resizeRaf.current) cancelAnimationFrame(resizeRaf.current);
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("load", onResize);
       if (tlRef.current) tlRef.current.kill();
+      if (stRef.current) stRef.current.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (!scrollBoost) return;
-
-    lastScrollY.current = window.scrollY;
-
-    const onScroll = () => {
-      const current = window.scrollY;
-      const delta = current - lastScrollY.current;
-      lastScrollY.current = current;
-
-      // scale delta to a usable boost number.
-      // tuned so normal wheel produces gentle boost; clamp to avoid crazy values.
-      const raw = delta * 0.02; // adjust sensitivity
-      const boost = clamp(raw, -1.2, 1.2); // can go negative -> negative timeScale -> temporary reverse
-
-      // target timeScale: base 1 plus boost
-      // positive boost -> speed up in current playback direction
-      // negative boost -> can become negative -> brief reverse playback
-      const target = 1 + boost;
-
-      if (!tlRef.current) return;
-      // animate timeScale smoothly, then ease back to 1
-      gsap.killTweensOf(tlRef.current, "timeScale");
-      gsap.to(tlRef.current, {
-        timeScale: target,
-        duration: 0.25,
-        ease: "power2.out",
-        onComplete: () => {
-          // return to normal smoothly
-          gsap.to(tlRef.current!, {
-            timeScale: 1,
-            duration: 0.6,
-            ease: "power3.out",
-          });
-        },
-      });
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollBoost]);
-
-  // Render two copies of content side-by-side so there's always a duplicate behind
-  // Use visually-hidden measuring copy if not ready to avoid flicker
   return (
-    <div
-      style={{
-        overflow: "hidden",
-        width: "100%",
-        display: "block",
-      }}
-    >
+    <div style={{ overflow: "hidden", width: "100%", display: "block" }}>
       <div
-        // this is the track we animate (moves horizontally). It contains two copies of the items.
-        ref={containerRef}
+        ref={wrapperRef}
         style={{
           display: "flex",
           gap: `${gap}px`,
           whiteSpace: "nowrap",
           willChange: "transform",
         }}
-        aria-hidden={false}
       >
         <div
           ref={contentRef}
@@ -170,14 +143,11 @@ const Marquee = ({
         >
           {children}
         </div>
-
-        {/* duplicate copy for seamless loop */}
         <div style={{ display: "flex", gap: `${gap}px`, alignItems: "center" }}>
           {children}
         </div>
       </div>
 
-      {/* protect against initial layout flash: until we measured width, keep track hidden offscreen but not with display:none */}
       {!ready && (
         <div style={{ position: "absolute", left: -99999, top: -99999, visibility: "hidden" }}>
           <div style={{ display: "flex", gap: `${gap}px` }}>{children}</div>

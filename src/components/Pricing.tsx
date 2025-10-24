@@ -1,16 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import gsap from "gsap";
 
 import { Button } from "@/components/ui";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
 
 const Pricing = () => {
+  useEffect(() => {
+    gsap.fromTo('.pricing-wrapper', {
+      y: 50,
+    }, {
+      y: 0,
+      scrollTrigger: {
+        trigger: '.pricing-wrapper',
+        start: "top bottom",
+        end: "top center",
+        scrub: 1
+      },
+    })
+  }, []);
+
+  const pricingCardClass = 'relative group/item hover:scale-[1.02] hover:translate-y-[-10px] transition-all card-style'
+
   return (
-    <section className="section-v-space !pt-[200px]">
+    <section className="section-v-space lg:!pt-[200px]">
       <div>
-        <SectionLayout>
+        <SectionLayout className="!gap-10">
           <SectionHead
             subText="(4) Pricing"
             heading="How much does it cost?"
@@ -19,12 +36,12 @@ const Pricing = () => {
             descWidth="max-w-[470px] lg:max-w-[580px]"
           />
 
-          <div className="flex flex-col xl:flex-row justify-center gap-5">
-            <div className="relative group/item p-5 border border-white/25 rounded-md custom-gradient hover:scale-[1.02] hover:translate-y-[-10px] transition-all">
+          <div className="pricing-wrapper grid grid-cols-1 xl:grid-cols-2 justify-center gap-5 w-full max-w-[1020px] mx-auto">
+            <div className={pricingCardClass}>
               <div className="space-y-[26px] relative z-10">
                 <div className="space-y-3">
                   <h4 className="text-2xl">Landing Page Design</h4>
-                  <h3 className="text-[30px] lg:text-[36px] xl:text-[46px] leading-[110%]">€999-1999</h3>
+                  <h3 className="text-[30px] xl:text-[46px] leading-[110%]">€999-1999</h3>
                   <p>Get noticed with a sleek and engaging landing page.</p>
                 </div>
 
@@ -69,7 +86,7 @@ const Pricing = () => {
               <div className="absolute inset-0 secondary-gradient opacity-0 group-hover/item:opacity-40 transition"></div>
             </div>
 
-            <div className="relative group/item p-5 border border-white/25 rounded-md custom-gradient hover:scale-[1.02] hover:translate-y-[-10px] transition-all">
+            <div className={pricingCardClass}>
               <div className="space-y-[26px] relative z-10">
                 <div className="space-y-3">
                   <h4 className="text-2xl">Multi-page Design</h4>

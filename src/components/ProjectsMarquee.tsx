@@ -30,12 +30,12 @@ const ProjectsMarquee = () => {
 
   return (
     <div className="flex gap-5 fade-in">
-      <Marquee speed={50} gap={24} scrollBoost={true}>
+      <Marquee speed={100} gap={24} scrollBoost={true}>
         {projectsSecreenshots.map((ss, index) => {
           return (
           <div key={index}>
-            <div className="w-[555px] h-[314px] lg:w-[925px] lg:h-[524px] bg-[#151518] p-1.5 border border-white/25 rounded-md">
-              <div className="border border-white/25 rounded-md overflow-hidden h-full">
+            <div className="w-[555px] h-[314px] lg:w-[925px] lg:h-[524px] bg-[#151518] p-1.5 border border-white/25 rounded-md [2px]">
+              <div className="border border-white/25 rounded-[2px] overflow-hidden h-full">
                 <img src={ss.image} alt={ss.alt} className="h-full w-full object-cover" />
               </div>
             </div>
