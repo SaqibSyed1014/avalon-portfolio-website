@@ -36,6 +36,7 @@ const Hero = () => {
       <div className="container">
         <div className="card-style !p-1.5 bg-[#151518] fade-up shadow-[inset_-1px_1px_#ffffff80]">
           <div className="overflow-hidden rounded-[2px] h-[260px] lg:h-[550px] xl:h-[670px] border border-white/10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://framerusercontent.com/images/e633Jp9rA7J1z8Zq58eJTQNeco.jpg?scale-down-to=4096" alt=""
                   className="w-full h-full object-cover" />
           </div>

@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,7 +63,7 @@ const Marquee = ({
       stRef.current = ScrollTrigger.create({
         start: 0,
         end: "max",
-        onUpdate(self) {
+        onUpdate: (self :ScrollTrigger) => {
           if (!tlRef.current) return;
 
           const v = self.getVelocity();

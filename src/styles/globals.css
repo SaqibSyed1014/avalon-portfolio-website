@@ -40,7 +40,7 @@
 
 @utility custom-gradient{
     background: radial-gradient(41% 95% at 50% 99.9%, rgb(35, 35, 45) 0%, rgb(11, 11, 12) 100%);
-    box-shadow: rgb(36, 36, 46) 0px 5px 40px 0px inset, rgba(69, 69, 97, 0) 0px 0px 60px 2px, rgba(80, 80, 112, 0) 0px 0px 160px 0px;
+    box-shadow: rgb(36, 36, 46) 0 5px 40px 0 inset, rgba(69, 69, 97, 0) 0 0 60px 2px, rgba(80, 80, 112, 0) 0 0 160px 0;
 }
 @utility secondary-gradient{
         background: radial-gradient(41% 94.9346% at 50% 100%, rgb(78, 78, 117) 0%, rgb(40, 40, 61) 100%);
