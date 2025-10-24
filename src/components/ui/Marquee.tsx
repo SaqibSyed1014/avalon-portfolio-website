@@ -79,14 +79,14 @@ const Marquee = ({
           // When scrolling up (v < 0): speed up in opposite direction
           const scrollDown = v > 0;
 
-          const reverseBoost = boost * 0.4;
+          const reverseBoost = boost * 0.2;
 
           const targetScale = dirIsLeft
             ? scrollDown
-              ? 1 + boost // down → faster left
+              ? 1 + (boost*0.8) // down → faster left
               : -1 - reverseBoost // up → faster right
             : scrollDown
-              ? -1 - boost // down → faster right
+              ? -1 - (boost*0.8) // down → faster right
               : 1 + reverseBoost; // up → faster left
 
           gsap.to(tlRef.current, {

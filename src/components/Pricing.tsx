@@ -22,7 +22,7 @@ const Pricing = () => {
     })
   }, []);
 
-  const pricingCardClass = 'relative group/item hover:scale-[1.02] hover:translate-y-[-10px] transition-all card-style'
+  const pricingCardClass = 'relative group/item hover:scale-[1.02] hover:translate-y-[-10px] transition-all card-style duration-700'
 
   return (
     <section className="section-v-space lg:!pt-[200px]">

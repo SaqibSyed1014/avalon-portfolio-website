@@ -50,7 +50,7 @@ const ProcessStep :React.FC<ProcessStepProps> = ({ index, step }) => {
             />
           </div>
 
-          <span className="text-2xl text-secondary">0{index}</span>
+          <span className="text-2xl text-secondary">0{index+1}</span>
         </div>
 
         <div className="space-y-2.5">
@@ -158,8 +158,8 @@ const Process = () => {
   }, []);
 
   return (
-    <div>
-      <section ref={sectionRef} className="section-v-space max-sm:!pb-0 !pt-[100px] overflow-hidden relative">
+    <div ref={sectionRef}>
+      <section className="section-v-space lg:!pb-[160px] overflow-hidden relative">
         <div className="relative z-10">
           <SectionLayout>
             <SectionHead

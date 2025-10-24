@@ -27,7 +27,7 @@ const Benefits = () => {
     "rgb(81,81,114)_0px_5px_40px_0px_inset,rgba(69,69,97,0)_0px_0px_60px_2px,rgba(80,80,112,0.32)_0px_0px_60px_30px";
 
   return (
-    <section className="section-v-space">
+    <section className="section-v-space lg:pb-[160px]">
       <div>
         <SectionLayout>
           <SectionHead

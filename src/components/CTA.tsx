@@ -6,7 +6,7 @@ import { Button } from "@/components/ui";
 
 const Cta = () => {
   return (
-    <section className="section-v-space max-lg:pb-[100px]">
+    <section className="section-v-space pb-[100px]">
       <div className="container">
         <div className="flex justify-center relative z-10">
           <div className="mx-auto inline-flex w-full lg:max-w-[720px] flex-col items-center gap-[36px] text-center">
