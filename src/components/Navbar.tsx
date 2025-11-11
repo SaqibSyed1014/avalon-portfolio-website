@@ -44,12 +44,12 @@ const Navbar: React.FC = () => {
 
       <nav
         className={
-          `fixed top-0 right-0 left-0 z-50 w-full px-6 py-5 lg:p-8 xl:px-16 xl:py-10 xl:mix-blend-difference transition-all ${isNavOpened ? "!pb-[60px] lg:!pb-20" : ""}`
+          `fixed top-0 right-0 left-0 z-50 w-full px-6 py-5 lg:p-8 xl:px-16 xl:py-10 xl:mix-blend-difference transition-all ${isNavOpened ? "!pb-[60px]" : ""}`
         }
         style={{ background: "transparent" }}
       >
         <div className="relative z-10 mx-auto w-full max-w-[1600px]">
-          <div className="flex flex-col gap-[82px]">
+          <div className="flex flex-col gap-[60px]">
             <div className="flex items-center justify-between">
               {/* Logo/Brand Link */}
               <Link
@@ -98,15 +98,35 @@ const Navbar: React.FC = () => {
             </div>
 
             <div
-              className={`flex flex-col items-center gap-9 transition-all duration-700 ${isNavOpened ? "" : "max-h-0 overflow-hidden"}`}
+              className={`flex xl:hidden flex-col items-center gap-9 transition-all duration-700 ${isNavOpened ? "" : "max-h-0 overflow-hidden"}`}
             >
-              <NavLink href="/" text="Work" />
-              <NavLink href="/" text="About" />
-              <NavLink href="https://calendly.com" text="Get in touch" isExternal={true} />
+              <div className="flex flex-col gap-6">
+                <Link href="https://www.linkedin.com/in/abdul-uiux/" target="_blank" className="flex items-center gap-1.5 text-white">
+                  <div className="w-6 h-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/linkedin.png" alt="Linkedin Logo" className="w-full h-full object-cover" />
+                  </div>
+                  Linkedin
+                </Link>
+                <Link href="https://dribbble.com/abdul_uiux" target="_blank" className="flex items-center gap-1.5 text-white">
+                  <div className="w-6 h-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/dribbble.svg" alt="Dribbble Logo" />
+                  </div>
+                  Dribbble
+                </Link>
+                <Link href="https://www.behance.net/abdul_uiux" target="_blank" className="flex items-center gap-1.5 text-white">
+                  <div className="w-6 h-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/behance.svg" alt="Behance Logo" />
+                  </div>
+                  Behance
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-        <div className={`absolute inset-0 ${isNavOpened ? "bg-black" : "mobile-nav-bg"}`}></div>
+        <div className={`block xl:hidden absolute inset-0 ${isNavOpened ? "bg-black" : "mobile-nav-bg"}`}></div>
       </nav>
     </div>
   );
