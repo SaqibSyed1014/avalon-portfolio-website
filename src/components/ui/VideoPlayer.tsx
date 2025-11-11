@@ -45,7 +45,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, poster, width = "100%", 
       height={height}
       playsInline
       preload="metadata"
-      style={{ display: "block", maxWidth: "100%", height: "100%", cursor: "pointer" }}
+      style={{ display: "block", maxWidth: "100%", height: "100%", cursor: "pointer", objectFit: 'cover' }}
       onClick={handleClick}
     >
       Your browser does not support the video tag.

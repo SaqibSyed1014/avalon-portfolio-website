@@ -81,16 +81,16 @@ const Hero: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-10 w-10 lg:h-[56px] lg:w-[56px]">
-                  <div >
+                <div className="relative w-[46px] h-[51px] flex justify-center items-center">
+                  <div className="absolute inset-0 z-[-1]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/images/top-rated-plus-bg.png"
                       alt="Top Rated Plus Badge"
-                      className="animate-[spin_7s_linear_infinite] duration-[8s]"
+                      className="animate-[spin_7s_linear_infinite] duration-[12s] w-full h-full"
                     />
                   </div>
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="relative z-10">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                       <path d="M19.9191 20.7994C20.3048 22.2073 18.7677 23.2333 17.6145 22.4638L12.363 19.0059L7.10953 22.4638C5.95624 23.2333 4.41917 22.08 4.80295 20.7994L6.21274 14.7784L1.34503 10.8056C0.19174 9.90879 0.832026 8.11521 2.24181 7.98986L8.51931 7.60414L10.8259 1.71043C11.337 0.429857 13.2597 0.429857 13.7708 1.71043L16.0774 7.60414M19.2827 7.98793V16.9558M23.892 12.4719H14.9241" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -101,9 +101,9 @@ const Hero: React.FC = () => {
             <div className="flex flex-col gap-5">
               {/* Headline */}
               <h1 className="heading-style-1 fade-up" data-delay={0.5}>
-                <span className="hidden xl:block">a Senior UX/UI Designer,<br/> Building Solutions for <span className="font-bold">Founders</span></span>
-                <span className="hidden md:block xl:hidden">I&#39;m Mark Avalon, a freelancer<br/> designing standout<br/> websites for startups.</span>
-                <span className="block md:hidden">I&#39;m Mark Avalon,<br/> a freelancer<br/> designing<br/> standout<br/> websites<br/> for startups.</span>
+                <span className="hidden xl:block">A Senior UX/UI Designer,<br/> Building Solutions for <span className="font-bold">Founders</span></span>
+                <span className="hidden md:block xl:hidden">A Senior UX/UI Designer,<br/> Building Solutions for <span className="font-bold">Founders</span></span>
+                <span className="block md:hidden">A Senior UX/UI Designer, Building Solutions for <span className="font-bold">Founders</span></span>
               </h1>
 
               {/* Description */}

@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
                 <Link href="https://www.linkedin.com/in/abdul-uiux/" className="flex items-center gap-1.5 text-white">
                   <div className="w-6 h-6">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/linkedin.png" alt="Linkedin Logo" />
+                    <img src="/images/linkedin.png" alt="Linkedin Logo" className="w-full h-full object-cover" />
                   </div>
                   Linkedin
                 </Link>
