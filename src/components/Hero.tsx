@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
                   <div className="h-11 w-11 lg:h-[50px] lg:w-[51px] flex-shrink-0 overflow-hidden rounded-full">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src="https://framerusercontent.com/images/vZADFl4NEYLJ11AxhBHI0iET1U.png"
+                      src="/images/abdul-wahab.jpg"
                       alt="Mark Avalon Profile"
                       className="h-full w-full object-cover"
                     />
