@@ -24,10 +24,10 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section>
+    <section className="relative z-20">
       <div className="section-v-space pb-[100px] !pt-[140px]">
         <div className="container">
-          <div className="relative z-20 flex flex-col items-start gap-[36px] font-light">
+          <div className="flex flex-col items-start gap-[36px] font-light">
               <div className="flex items-center gap-6 fade-up" data-delay={0.2}>
                 {/* Stack: Image and Name/Status */}
                 <div className="flex items-center gap-4 lg:gap-6">
@@ -42,40 +42,66 @@ const Hero: React.FC = () => {
 
                   <div className="flex flex-col">
                     <h3 className="text-xl lg:text-2xl xl:text-[32px] leading-[110%]">
-                      Mark Avalon
+                      Abdul Wahab
                     </h3>
 
                     {/* Available for work Status (Pulsing Dot) */}
                     <div className="flex items-center gap-[10px]">
-                      <div className="relative flex h-2.5 w-2.5">
-                      <span
-                        className="absolute inline-flex h-full w-full animate-pinging rounded-full bg-[#7cf47e] opacity-20"></span>
+                      <div className="relative flex h-4 w-4">
+                        <span
+                          className="absolute inline-flex h-full w-full animate-pinging rounded-full bg-[#7cf47e] opacity-20"></span>
                         {/* Solid dot */}
                         <span
-                          className="relative inline-flex h-2.5 w-2.5 rounded-full"
+                          className="relative inline-flex justify-center items-center h-4 w-4 rounded-full overflow-hidden"
                           style={{
                             background: "radial-gradient(50% 50%, rgb(49, 238, 51) 0%, rgb(124, 244, 126) 100%)",
                             boxShadow: "rgba(124, 244, 126, 0.5) 0px 0px 20px 0px"
                           }}
-                        ></span>
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <g filter="url(#filter0_d_1248_19)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.23106 9.45148H4.77206V8.79803H9.23106V9.45148ZM9.23806 8.14388H4.76436L3.85156 5.71068L5.59876 6.29308L7.00156 4.55078L8.40436 6.29308L10.1516 5.71068L9.23806 8.14388Z" fill="white"/>
+                            </g>
+                            <defs>
+                            <filter id="filter0_d_1248_19" x="-16.1484" y="-15.4492" width="46.2998" height="44.9004" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset/>
+                            <feGaussianBlur stdDeviation="10"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.486275 0 0 0 0 0.956863 0 0 0 0 0.494118 0 0 0 0.5 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1248_19"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1248_19" result="shape"/>
+                            </filter>
+                            </defs>
+                          </svg>
+                        </span>
                       </div>
-                      <p>Available for work</p>
+                      <p>Top Rated Plus</p>
                     </div>
                   </div>
                 </div>
-                <div className="h-10 w-10 lg:h-[56px] lg:w-[56px] animate-[spin_7s_linear_infinite] duration-[8s]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://framerusercontent.com/images/QQ8Ta0XApGQug7OqXmDapa7BIA.svg"
-                    alt=""
-                  />
+                <div className="relative h-10 w-10 lg:h-[56px] lg:w-[56px]">
+                  <div >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/top-rated-plus-bg.png"
+                      alt="Top Rated Plus Badge"
+                      className="animate-[spin_7s_linear_infinite] duration-[8s]"
+                    />
+                  </div>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                      <path d="M19.9191 20.7994C20.3048 22.2073 18.7677 23.2333 17.6145 22.4638L12.363 19.0059L7.10953 22.4638C5.95624 23.2333 4.41917 22.08 4.80295 20.7994L6.21274 14.7784L1.34503 10.8056C0.19174 9.90879 0.832026 8.11521 2.24181 7.98986L8.51931 7.60414L10.8259 1.71043C11.337 0.429857 13.2597 0.429857 13.7708 1.71043L16.0774 7.60414M19.2827 7.98793V16.9558M23.892 12.4719H14.9241" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
 
             <div className="flex flex-col gap-5">
               {/* Headline */}
               <h1 className="heading-style-1 fade-up" data-delay={0.5}>
-                <span className="hidden xl:block">I&#39;m Mark Avalon, a freelancer designing<br/> standout websites for startups.</span>
+                <span className="hidden xl:block">a Senior UX/UI Designer,<br/> Building Solutions for <span className="font-bold">Founders</span></span>
                 <span className="hidden md:block xl:hidden">I&#39;m Mark Avalon, a freelancer<br/> designing standout<br/> websites for startups.</span>
                 <span className="block md:hidden">I&#39;m Mark Avalon,<br/> a freelancer<br/> designing<br/> standout<br/> websites<br/> for startups.</span>
               </h1>
@@ -83,15 +109,13 @@ const Hero: React.FC = () => {
               {/* Description */}
               <div className="fade-up" data-delay={0.7}>
                 <p className="hero-description">
-                  I design unique websites that turn start-ups into market leaders. Let&#39;s create a
-                  digital presence that not only looks amazing but also drives real results for your
-                  business.
+                  I design fast, accessible, and brand-true experiences that improve conversion, SEO, and user satisfaction for startups and SMEs.
                 </p>
               </div>
             </div>
 
             <div className="fade-up" data-delay={0.9}>
-              <Button>Get in touch</Button>
+              <Button>Get a free 30-minute strategy call</Button>
             </div>
           </div>
         </div>

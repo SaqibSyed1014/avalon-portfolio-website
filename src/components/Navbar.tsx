@@ -56,14 +56,32 @@ const Navbar: React.FC = () => {
                 href="/"
                 className="text-xl font-light tracking-wider uppercase transition duration-150 hover:text-gray-300"
               >
-                Mark Avalon
+                Abdul Wahab
               </Link>
 
               {/* Navigation Links */}
               <div className="hidden space-x-8 md:space-x-[22px] xl:flex">
-                <NavLink href="/" text="Work" />
-                <NavLink href="/" text="About" />
-                <NavLink href="https://calendly.com" text="Get in touch" isExternal={true} />
+                <Link href="https://www.linkedin.com/in/abdul-uiux/" className="flex items-center gap-1.5 text-white">
+                  <div className="w-6 h-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/linkedin.png" alt="Linkedin Logo" />
+                  </div>
+                  Linkedin
+                </Link>
+                <Link href="https://dribbble.com/abdul_uiux" className="flex items-center gap-1.5 text-white">
+                  <div className="w-6 h-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/dribbble.svg" alt="Dribbble Logo" />
+                  </div>
+                  Dribbble
+                </Link>
+                <Link href="https://www.behance.net/abdul_uiux" className="flex items-center gap-1.5 text-white">
+                  <div className="w-6 h-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/behance.svg" alt="Behance Logo" />
+                  </div>
+                  Behance
+                </Link>
               </div>
 
               <div

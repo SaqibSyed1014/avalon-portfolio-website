@@ -9,15 +9,18 @@ const Cta = () => {
     <section className="section-v-space pb-[100px]">
       <div className="container">
         <div className="flex justify-center relative z-10">
-          <div className="mx-auto inline-flex w-full lg:max-w-[720px] flex-col items-center gap-[36px] text-center">
+          <div className="mx-auto inline-flex w-full flex-col items-center gap-[36px] text-center">
             <div className="space-y-5">
-              <h1 className="heading-style-1 max-lg:max-w-[520px] max-lg:mx-auto">Ready to Transform Your Online Presence?</h1>
+              <h1 className="heading-style-1 lg:max-w-[790px] w-full lg:mx-auto">
+                📩 Ready to Elevate Your Digital Experience?
+              </h1>
               <p className="mx-auto xl:max-w-[600px] text-md xl:text-xl">
-                Let’s collaborate to create a website that drives results and reflects your
-                brand&#39;s unique identity. Contact me today to get started.
+                Tell me about your product and goals. I’ll reply within one business day with next steps and a rough plan.
               </p>
             </div>
-            <Button>Get in touch</Button>
+            <Button>
+              Get a free 30-minute strategy call
+            </Button>
           </div>
         </div>
       </div>

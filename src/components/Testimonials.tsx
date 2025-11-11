@@ -15,7 +15,7 @@ interface Testimonial {
 const TestimonialItem :React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
   return (
     <div>
-      <div className="card-style flex flex-col justify-between h-[203px] w-[363px]">
+      <div className="card-style flex flex-col justify-between h-[233px] w-[363px]">
         <p className="text-secondary text-wrap">&#34;{testimonial.review}&#34;</p>
         <div className="flex gap-3 items-center">
           <div className="size-[55px] rounded-full overflow-hidden">
@@ -35,32 +35,50 @@ const TestimonialItem :React.FC<{ testimonial: Testimonial }> = ({ testimonial }
 const Testimonials = () => {
   const testimonials: Testimonial[] = [
     {
-      review: "Our new site is a masterpiece. Mark understood our vision perfectly and executed it flawlessly. Our user engagement has skyrocketed.",
-      name: "Sarah Chen",
+      review: "Abdul was a fantastic partner to work with. He brought strong product design skills, great attention to detail, and thoughtful problem-solving to every project.",
+      name: "Tristan",
       designation: "Chief Operating Officer",
       image: 'https://framerusercontent.com/images/DzmsX9RY7ZMcxnS0VDE8nrEMJwk.jpg'
     },
     {
-      review: "The new design has transformed our online presence. Our customers love the site, and it has significantly improved our sales.",
-      name: "Michael Brandt",
+      review: "Great professional work, always finding solutions to ensure to provide optimal user experience to our we app. Highly recommended.",
+      name: "Nadim",
       designation: "Director of Engineering",
       image: 'https://framerusercontent.com/images/GLRr9uvTdE0X3XmXVEeXLdXHgS8.jpg'
     },
     {
-      review: "Our new site is a masterpiece. Mark understood our vision perfectly and executed it flawlessly. Our user engagement has skyrocketed.",
+      review: "Rehired Abdul and tasked him in turning Figma into React. His commitment to excellence and the timely delivery of high-quality results has earned our trust and for future projects.",
       name: "Jessica Lee",
       designation: "VP of Marketing Strategy",
       image: 'https://framerusercontent.com/images/oUkBi1c8nERocfQrJWNLxZ9Fipw.jpg'
     },
     {
-      review: "Working with Mark was a pleasure. The process was smooth, and the end result is a site that we’re incredibly proud of.",
+      review: "Fantastic front end developer skills. Followed instructions clearly. Great communication. Efficient delivery.",
       name: "Alex Ramirez",
       designation: "Senior Solutions Architect",
       image: 'https://framerusercontent.com/images/Dq0D8YrZ8rWDXAualtz8984Y1cg.jpg'
     },
     {
-      review: "The website Mark Avalon designed for us exceeded our expectations. It’s beautiful and highly functional, bringing in more clients than ever before.",
-      name: "Lucy Allie",
+      review: "Abdul delivered exceptional work. He genuine care about our project with excellent communication. Without a doubt, we will definitely hire him again in the future!",
+      name: "Anna",
+      designation: "CEO, Tech Innovation Ltd.",
+      image: 'https://framerusercontent.com/images/ZFX2ljkzvDEzlePf7lzdxzPbxXA.jpg'
+    },
+    {
+      review: "Abdul Wahab Is a fantastic product designer. I am shocked that his process is super simple, and he provides proper results even though my internee developer has no problem understanding it.",
+      name: "Anna",
+      designation: "CEO, Tech Innovation Ltd.",
+      image: 'https://framerusercontent.com/images/ZFX2ljkzvDEzlePf7lzdxzPbxXA.jpg'
+    },
+    {
+      review: "Thank you, abdul, for my luxury restaurant landing page. You have never disappointed me. I surely recommend Abdul. He is the best",
+      name: "Anna",
+      designation: "CEO, Tech Innovation Ltd.",
+      image: 'https://framerusercontent.com/images/ZFX2ljkzvDEzlePf7lzdxzPbxXA.jpg'
+    },
+    {
+      review: "OMG, Abdul, you are amazing. I never thought you could make such massive changes with proper spacing and colors. You have made my day. I will recommend you and hire you again for all design work.",
+      name: "Maggie",
       designation: "CEO, Tech Innovation Ltd.",
       image: 'https://framerusercontent.com/images/ZFX2ljkzvDEzlePf7lzdxzPbxXA.jpg'
     },

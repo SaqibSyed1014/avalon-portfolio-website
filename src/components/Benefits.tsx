@@ -8,16 +8,16 @@ import SectionLayout from "@/components/ui/SectionLayout";
 const Benefits = () => {
   const benefits = [
     {
-      title: "Unique Designs",
-      text: "I don't do cookie-cutter. Every design is tailored to your brand's identity and goals.",
+      title: "Business-Centric Solutions",
+      text: "Whether it's SaaS dashboard optimization or MVP design, I focus on maximizing user engagement and conversion rates.",
     },
     {
-      title: "Results-Driven",
-      text: "Your success is my success. I design with the end user in mind, ensuring your website achieves your business objectives.",
+      title: "Proven Track Record",
+      text: "Trusted by 45+ clients, including notable names like Prospectory AI and Agent Legend, for consistently delivering exceptional work.",
     },
     {
-      title: "Ongoing Support",
-      text: "The launch is just the beginning. I provide continuous support to keep your website running smoothly.",
+      title: "End-to-End Expertise",
+      text: "From concept to deployment, I ensure seamless transitions and product launches with a focus on quality and performance.",
     },
   ];
 

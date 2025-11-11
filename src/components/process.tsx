@@ -10,54 +10,82 @@ import SectionLayout from "@/components/ui/SectionLayout";
 interface ProcessStep {
   title: string;
   description: string;
+  points: string[];
+  duration: string;
 }
 
 interface ProcessStepProps {
-  index: number;
   step: ProcessStep;
 }
 
 const processSteps :ProcessStep[] = [
   {
-    title: 'Analyse',
-    description: 'We kick things off by diving deep into your business. Understanding your goals, audience, and competition is crucial for building a website that stands out.'
+    title: 'Discovery & Alignment',
+    description: 'We kick things off by diving deep into your business. Understanding your goals, audience, and competition is crucial for building a website that stands out.',
+    points: [
+      'Lead stakeholder talks & workshops (WBS)',
+      'Analyze competitors & user insights (SWOT)',
+      'Map journeys to set goals & metrics. (Network Diagram)'
+    ],
+    duration: 'Week #1'
   },
   {
-    title: 'Design',
-    description: 'We kick things off by diving deep into your business. Understanding your goals, audience, and competition is crucial for building a website that stands out.'
+    title: 'UX/UI Design & Prototyping',
+    description: 'We kick things off by diving deep into your business. Understanding your goals, audience, and competition is crucial for building a website that stands out.',
+    points: [
+      'Design high-fidelity, user-focused mockups.',
+      'Build interactive prototypes for feedback.',
+      'Refine UI for better experience & conversion.'
+    ],
+    duration: 'Week #2-5'
   },
   {
-    title: 'Development',
-    description: 'We kick things off by diving deep into your business. Understanding your goals, audience, and competition is crucial for building a website that stands out.'
+    title: 'Development & Design Handoff',
+    description: 'We kick things off by diving deep into your business. Understanding your goals, audience, and competition is crucial for building a website that stands out.',
+    points: [
+      'Build pixel-perfect sites in Webflow & Framer.',
+      'Add custom interactions & animations.',
+      'Deliver smooth handoffs with full docs.'
+    ],
+    duration: 'Week #6'
   },
   {
-    title: 'Iteration',
-    description: 'We kick things off by diving deep into your business. Understanding your goals, audience, and competition is crucial for building a website that stands out.'
+    title: 'Optimization & Deployment',
+    description: 'We kick things off by diving deep into your business. Understanding your goals, audience, and competition is crucial for building a website that stands out.',
+    points: [
+      'Test across all devices & browsers.',
+      'Optimize speed for smooth UX.',
+      'Launch & refine based on feedback.'
+    ],
+    duration: 'Week #7'
   }
 ];
 
 
-const ProcessStep :React.FC<ProcessStepProps> = ({ index, step }) => {
+const ProcessStep :React.FC<ProcessStepProps> = ({ step }) => {
   return (
     <div className="card-style relative xl:w-[490px] h-[242px] shrink-0">
       <div className="flex flex-col justify-between relative z-10 h-full">
         <div className="flex justify-between">
           <div className="h-8 w-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://framerusercontent.com/images/QQ8Ta0XApGQug7OqXmDapa7BIA.svg"
-              alt=""
-            />
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M-11.0078 16.4001L14.0722 16.7921L-3.38181 34.8141L-2.81681 35.3791L15.2052 17.9261L15.5972 43.0061H16.3972L16.7892 17.9261L34.8122 35.3801L35.3772 34.8151L17.9242 16.7931L43.0042 16.4011V15.6011L17.9242 15.2091L35.3782 -2.81386L34.8132 -3.37886L16.7912 14.0741L16.3982 -11.0059H15.5982L15.2062 14.0741L-2.81581 -3.37986L-3.38081 -2.81486L14.0722 15.2071L-11.0078 15.5991V16.4001Z" fill="#F9F4F4" stroke="#F9F4F4" stroke-width="0.8"/>
+            </svg>
           </div>
 
-          <span className="text-2xl text-secondary">0{index+1}</span>
+          <span className="text-2xl text-secondary">{step.duration}</span>
         </div>
 
         <div className="space-y-2.5">
           <h3 className="heading-style-2">{step.title}</h3>
           {/*Description text*/}
           <div className="desc overflow-hidden xl:h-0">
-            <p>{step.description}</p>
+            <ul className="list-disc normal-case pl-2">
+              {step.points.map((point, i) => (
+                <li key={i} className="ml-3">{point}</li>
+              ))}
+            </ul>
+            {/*<p>{step.description}</p>*/}
           </div>
         </div>
       </div>
@@ -164,7 +192,7 @@ const Process = () => {
           <SectionLayout>
             <SectionHead
               subText="(3) Process"
-              heading="How it goes"
+              heading="A simple, transparent process"
               description="Crafting a standout website involves a detailed and collaborative process. Here’s how we achieve your vision:"
               descWidth="max-w-[450px] lg:max-w-[550px] xl:max-w-[800px]"
             />
@@ -172,13 +200,13 @@ const Process = () => {
             <div className="relative z-10">
               <div ref={cardsRef} className="hidden xl:flex gap-[90px]">
                 {processSteps.map((step, i) => (
-                  <ProcessStep key={i} step={step} index={i} />
+                  <ProcessStep key={i} step={step} />
                 ))}
               </div>
 
               <div className="flex flex-col xl:hidden gap-5">
                 {processSteps.map((step, i) => (
-                  <ProcessStep key={i} step={step} index={i} />
+                  <ProcessStep key={i} step={step} />
                 ))}
               </div>
             </div>

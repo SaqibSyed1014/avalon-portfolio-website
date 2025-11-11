@@ -12,20 +12,20 @@ interface FAQ {
 
 const faqs :FAQ[] = [
   {
-    question: 'How long does it take to build a website?',
-    answer: 'The timeline varies depending on the complexity of the project. On average, it takes 4-6 weeks from start to finish.',
+    question: 'How soon can we start?',
+    answer: ' I can usually begin within 1-2 days; discovery calls are available this week.',
   },
   {
-    question: 'How long does it take to build a website?',
-    answer: 'The timeline varies depending on the complexity of the project. On average, it takes 4-6 weeks from start to finish.',
+    question: 'Do you work with developers?',
+    answer: ' Yes — I hand off production-ready files and collaborate on build.',
   },
   {
-    question: 'How long does it take to build a website?',
-    answer: 'The timeline varies depending on the complexity of the project. On average, it takes 4-6 weeks from start to finish.',
+    question: 'Can you audit our current site?',
+    answer: 'Yes — I’ll deliver a prioritized UX audit with quick wins and a roadmap.',
   },
   {
-    question: 'How long does it take to build a website?',
-    answer: 'The timeline varies depending on the complexity of the project. On average, it takes 4-6 weeks from start to finish.',
+    question: 'What tools do you use?',
+    answer: 'Figma, Framer, and modern design-system workflows',
   }
 ]
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -10,47 +11,45 @@ const Footer = () => {
           <div className="flex justify-between items-start max-lg:flex-col max-lg:gap-[42px]">
             <div className="space-y-[18px] hidden xl:block">
               <div className="uppercase text-3xl">
-                Mark Avalon
+                Abdul Wahab
               </div>
-              <div className="opacity-60">
-                <p>© 2025 Avalon. All rights reserved.</p>
-                <p>Designed by Josiah Bhanghoyer</p>
+              <div className="opacity-60 w-full max-w-[243px]">
+                <p>Senior UI/UX Designer focused on clean interfaces, measurable results, and delightful UX.</p>
               </div>
             </div>
             <div className="space-y-[18px]">
               <div className="uppercase text-xl">
                 Contact
               </div>
-              <div className="text-white space-y-3">
-                <p className="cursor-pointer">Markavalon@mail.com</p>
-                <p className="cursor-pointer">0123456789</p>
+              <div className="flex flex-col text-white gap-3">
+                <Link href="mailto:ab.wahab192@gmail.com" target="_blank" className="normal-case">
+                  ab.wahab192@gmail.com
+                </Link>
+                <Link href="https://www.upwork.com/freelancers/abduluiux" target="_blank" className="normal-case">
+                  upwork.com/abduluiux
+                </Link>
               </div>
             </div>
             <div className="space-y-[18px]">
               <div className="uppercase text-xl">
                 Socials
               </div>
-              <div className="text-white space-y-3">
-                <p className="cursor-pointer">X (Formerly Twitter)</p>
-                <p className="cursor-pointer">Dribbble</p>
-                <p className="cursor-pointer">Behance</p>
-              </div>
-            </div>
-            <div className="space-y-[18px]">
-              <div className="uppercase text-xl">
-                Pages
-              </div>
-              <div className="text-white space-y-3">
-                <p className="cursor-pointer">Work</p>
-                <p className="cursor-pointer">About me</p>
-                <p className="cursor-pointer">404</p>
+              <div className="flex flex-col text-white gap-3">
+                <Link href="https://www.behance.net/abdul_uiux" target="_blank" className="normal-case">
+                  Behance
+                </Link>
+                <Link href="https://dribbble.com/abdul_uiux" target="_blank" className="normal-case">
+                  Dribbble
+                </Link>
+                <Link href="https://www.pinterest.com/abdul_uiux/" target="_blank" className="normal-case">
+                  Pinterest
+                </Link>
               </div>
             </div>
           </div>
 
-          <div className="flex xl:hidden justify-between lg:items-center max-lg:flex-col text-secondary opacity-60 w-full">
-            <p>@2025 Display. All rights reserved.</p>
-            <p>Designed by Abdul Wahab</p>
+          <div className="flex justify-center text-secondary w-full">
+            <p>© 2025 Abdul. All rights reserved.</p>
           </div>
         </div>
       </div>
