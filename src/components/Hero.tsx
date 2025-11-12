@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
                   <div className="relative h-11 w-11 lg:h-[50px] lg:w-[51px] flex-shrink-0 overflow-hidden rounded-full">
                     <Image
                       src="/images/abdul-wahab.jpg"
-                      alt="Mark Avalon Profile"
+                      alt="Abdul Wahab Picture"
                       fill={true}
                       className="object-cover"
                     />
