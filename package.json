@@ -1,11 +1,11 @@
 {
-  "name": "next.js-typescript-starting-template",
+  "name": "abdul-wahab-portfolio",
   "version": "1.1.0",
   "private": true,
   "author": {
-    "name": "Salman Ahamed",
-    "email": "me.shahriyarhosen@gmail.com",
-    "url": "https://github.com/Salman-Ahamed"
+    "name": "Syed Saqib Ali",
+    "email": "saqibsyed1014@gmail.com",
+    "url": "https://github.com/saqibsyed1014"
   },
   "scripts": {
     "dev": "next dev --turbopack",

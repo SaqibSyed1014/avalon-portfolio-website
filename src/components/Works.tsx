@@ -2,6 +2,7 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 
@@ -11,8 +12,6 @@ import { Button } from "@/components/ui";
 import Marquee from "@/components/ui/Marquee";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
-
-import Link from "next/link";
 
 interface Project {
   id: string;

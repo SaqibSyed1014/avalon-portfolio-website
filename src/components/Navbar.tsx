@@ -1,41 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import Image from "next/image";
 
-interface NavLinkProps {
-  href: string;
-  text: string;
-  isExternal?: boolean;
-}
-
-const NavLink: React.FC<NavLinkProps> = ({ href, text, isExternal = false }) => {
-  // Consolidating all link styles into commonClasses
-  const commonClasses = "text-xl lg:text-2xl xl:text-xl font-light uppercase transition duration-200 group relative";
-
-  // Underline span styles
-  const underlineClasses =
-    "absolute bottom-0 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left";
-
-  if (isExternal) {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={commonClasses}>
-        {text}
-        {/* Animated underline for hover state */}
-        <span className={underlineClasses}></span>
-      </a>
-    );
-  }
-
-  return (
-    <a href={href} className={commonClasses}>
-      {text}
-      {/* Animated underline for hover state */}
-      <span className={underlineClasses}></span>
-    </a>
-  );
-};
 
 const Navbar: React.FC = () => {
   const [isNavOpened, setNavOpened] = useState<boolean>(false);

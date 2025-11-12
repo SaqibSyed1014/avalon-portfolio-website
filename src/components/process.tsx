@@ -219,6 +219,7 @@ const Process = () => {
 
         {/*BG Image*/}
         <div ref={bgRef} className="max-lg:hidden opacity-60 absolute top-0 bottom-0 left-0 right-[-960px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
               src="https://framerusercontent.com/images/3vmeJmumAbTG3fibdczaTt2VJt8.png"
                alt="BG Image"

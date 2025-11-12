@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import SectionLayout from "@/components/ui/SectionLayout";
-import SectionHead from "@/components/ui/SectionHead";
+
 import Marquee from "@/components/ui/Marquee";
+import SectionHead from "@/components/ui/SectionHead";
+import SectionLayout from "@/components/ui/SectionLayout";
 
 interface Testimonial {
   review: string;
