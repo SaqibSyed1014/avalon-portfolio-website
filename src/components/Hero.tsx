@@ -34,10 +34,11 @@ const Hero: React.FC = () => {
                 <div className="flex items-center gap-4 lg:gap-6">
                   <div className="relative h-11 w-11 lg:h-[50px] lg:w-[51px] flex-shrink-0 overflow-hidden rounded-full">
                     <Image
-                      src="/images/abdul-wahab.jpg"
+                      src="/images/abdul-wahab.webp"
                       alt="Abdul Wahab Picture"
                       fill={true}
                       className="object-cover"
+                      unoptimized={true}
                     />
                   </div>
 
@@ -89,6 +90,7 @@ const Hero: React.FC = () => {
                       alt="Top Rated Plus Badge"
                       fill={true}
                       className="animate-[spin_12s_linear_infinite]"
+                      unoptimized={true}
                     />
                   </div>
                   <div className="relative z-10">
