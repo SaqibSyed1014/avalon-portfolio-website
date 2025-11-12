@@ -1,7 +1,7 @@
 "use client";
 
-import gsap from "gsap";
 import React, { useEffect } from "react";
+import gsap from "gsap";
 
 import { Button } from "@/components/ui";
 import SectionHead from "@/components/ui/SectionHead";

@@ -1,13 +1,13 @@
 "use client";
 
 import gsap from "gsap";
-import Image from "next/image";
 import React, { useEffect } from "react";
 
 import ProjectsMarquee from "@/components/ProjectsMarquee";
 import { Button } from "@/components/ui";
 
 import useFadeUpAnimation from "@/lib/utils/fadeup";
+import Image from "next/image";
 
 const Hero: React.FC = () => {
   useFadeUpAnimation();

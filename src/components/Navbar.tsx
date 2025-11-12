@@ -37,7 +37,6 @@ const Navbar: React.FC = () => {
                       alt="Linkedin Logo"
                       fill={true}
                       className="object-cover"
-                      unoptimized={true}
                     />
                   </div>
                   Linkedin
@@ -49,6 +48,7 @@ const Navbar: React.FC = () => {
                       alt="Dribbble Logo"
                       fill={true}
                       className="object-cover"
+                      unoptimized={true}
                     />
                   </div>
                   Dribbble
@@ -60,6 +60,7 @@ const Navbar: React.FC = () => {
                       alt="Behance Logo"
                       fill={true}
                       className="object-cover"
+                      unoptimized={true}
                     />
                   </div>
                   Behance
