@@ -13,7 +13,7 @@ const ProjectsMarquee = () => {
 
   return (
     <div className="container">
-      <div className="flex gap-5 fade-in">
+      <div className="flex gap-5 fade-in" data-delay={1.2}>
 
         <div
           className="h-[340px] w-full md:h-[450px] lg:w-[911px] lg:h-[538px] mx-auto bg-[#151518] p-1 md:p-1.5 border border-white/25 hover:border-white/40 rounded-md transition-all">
