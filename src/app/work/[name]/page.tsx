@@ -2,12 +2,12 @@
 
 import React from "react";
 
+import Content from "@/app/work/components/Content";
+import Gallery from "@/app/work/components/Gallery";
 import Hero from "@/app/work/components/Hero";
+import RelevantWork from "@/app/work/components/RelevantWork";
 
 import PageWrapper from "@/components/layout/PageWrapper";
-import Content from "@/app/work/components/Content";
-import RelevantWork from "@/app/work/components/RelevantWork";
-import Gallery from "@/app/work/components/Gallery";
 
 
 const Page = () => {

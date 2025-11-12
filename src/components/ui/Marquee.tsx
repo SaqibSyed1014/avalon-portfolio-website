@@ -124,7 +124,7 @@ const Marquee = ({
       if (stRef.current) stRef.current.kill();
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [setup]);
 
   return (
     <div style={{ overflow: "hidden", width: "100%", display: "block" }}>
