@@ -7,6 +7,7 @@ import ProjectsMarquee from "@/components/ProjectsMarquee";
 import { Button } from "@/components/ui";
 
 import useFadeUpAnimation from "@/lib/utils/fadeup";
+import Image from "next/image";
 
 const Hero: React.FC = () => {
   useFadeUpAnimation();
@@ -29,14 +30,14 @@ const Hero: React.FC = () => {
         <div className="container">
           <div className="flex flex-col items-start gap-[36px] font-light">
               <div className="flex items-center gap-6 fade-up" data-delay={0.2}>
-                {/* Stack: Image and Name/Status */}
+                {/* Image and Name/Status */}
                 <div className="flex items-center gap-4 lg:gap-6">
-                  <div className="h-11 w-11 lg:h-[50px] lg:w-[51px] flex-shrink-0 overflow-hidden rounded-full">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                  <div className="relative h-11 w-11 lg:h-[50px] lg:w-[51px] flex-shrink-0 overflow-hidden rounded-full">
+                    <Image
                       src="/images/abdul-wahab.jpg"
                       alt="Mark Avalon Profile"
-                      className="h-full w-full object-cover"
+                      fill={true}
+                      className="object-cover"
                     />
                   </div>
 
@@ -45,7 +46,7 @@ const Hero: React.FC = () => {
                       Abdul Wahab
                     </h3>
 
-                    {/* Available for work Status (Pulsing Dot) */}
+                    {/* Pulsing Dot */}
                     <div className="flex items-center gap-[10px]">
                       <div className="relative flex h-4 w-4">
                         <span
@@ -83,11 +84,11 @@ const Hero: React.FC = () => {
                 </div>
                 <div className="relative w-[46px] h-[51px] flex justify-center items-center">
                   <div className="absolute inset-0 z-[-1]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src="/images/top-rated-plus-bg.png"
                       alt="Top Rated Plus Badge"
-                      className="animate-[spin_7s_linear_infinite] duration-[12s] w-full h-full"
+                      fill={true}
+                      className="animate-[spin_12s_linear_infinite]"
                     />
                   </div>
                   <div className="relative z-10">

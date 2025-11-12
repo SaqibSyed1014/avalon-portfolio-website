@@ -27,12 +27,12 @@ export const Button: FC<ButtonProps> = (props) => {
   return (
     <button
       className={cn(
-        "bg-secondary lg:h-[52px] inline-flex transform cursor-pointer justify-center items-center gap-3 text-center rounded-md leading-[130%] text-black capitalize transition duration-300 button-shadow",
+        "bg-secondary lg:h-[52px] text-nowrap inline-flex transform cursor-pointer justify-center items-center gap-3 text-center rounded-md leading-[130%] text-black capitalize transition duration-300 button-shadow",
         {
           // Sizes
           "px-3 py-1.5 text-sm": size === "sm",
           "px-4 py-2 text-base": size === "md",
-          "px-4 py-3 text-md lg:text-xl": size === "lg",
+          "px-4 py-3 text-sm md:text-md lg:text-xl": size === "lg",
 
           // Full width
           "w-full": fullWidth,

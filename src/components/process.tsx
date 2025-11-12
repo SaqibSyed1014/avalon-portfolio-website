@@ -64,7 +64,7 @@ const processSteps :ProcessStep[] = [
 
 const ProcessStep :React.FC<ProcessStepProps> = ({ step }) => {
   return (
-    <div className="card-style relative xl:w-[490px] h-[242px] shrink-0">
+    <div className="card-style relative xl:w-[490px] xl:h-[242px] shrink-0">
       <div className="flex flex-col justify-between relative z-10 h-full">
         <div className="flex justify-between">
           <div className="h-8 w-8">
@@ -76,11 +76,11 @@ const ProcessStep :React.FC<ProcessStepProps> = ({ step }) => {
           <span className="text-2xl text-secondary">{step.duration}</span>
         </div>
 
-        <div className="space-y-2.5">
+        <div className="space-y-2.5 max-lg:mt-12">
           <h3 className="heading-style-2">{step.title}</h3>
           {/*Description text*/}
           <div className="desc overflow-hidden xl:h-0">
-            <ul className="list-disc normal-case pl-2">
+            <ul className="list-disc normal-case pl-2 max-md:text-sm">
               {step.points.map((point, i) => (
                 <li key={i} className="ml-3">{point}</li>
               ))}
@@ -221,7 +221,7 @@ const Process = () => {
         <div ref={bgRef} className="max-lg:hidden opacity-60 absolute top-0 bottom-0 left-0 right-[-960px]">
           <img
               src="https://framerusercontent.com/images/3vmeJmumAbTG3fibdczaTt2VJt8.png"
-               alt=""
+               alt="BG Image"
                className="object-cover w-full h-full"
           />
         </div>

@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import FooterBG from "@/components/FooterBG";
+
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import FooterBG from "@/components/FooterBG";
 
 const CtaFooter = () => {
   return (

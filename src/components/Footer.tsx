@@ -22,7 +22,7 @@ const Footer = () => {
                 Contact
               </div>
               <div className="flex flex-col text-white gap-3">
-                <Link href="mailto:ab.wahab192@gmail.com" target="_blank" className="normal-case">
+                <Link href="mailto:ab.wahab192@gmail.com" className="normal-case">
                   ab.wahab192@gmail.com
                 </Link>
                 <Link href="https://www.upwork.com/freelancers/abduluiux" target="_blank" className="normal-case">
@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex justify-center text-secondary w-full">
+          <div className="flex justify-center text-secondary w-full max-md:text-sm">
             <p>© 2025 Abdul. All rights reserved.</p>
           </div>
         </div>
