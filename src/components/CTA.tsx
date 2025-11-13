@@ -4,6 +4,8 @@ import React from "react";
 
 import { Button } from "@/components/ui";
 
+import { socialLinks } from "@/lib/const";
+
 const Cta = () => {
   return (
     <section className="section-v-space pb-[100px]">
@@ -18,7 +20,7 @@ const Cta = () => {
                 Tell me about your product and goals. I’ll reply within one business day with next steps and a rough plan.
               </p>
             </div>
-            <Button>
+            <Button href={socialLinks.upwork}>
               Get a free strategy call
             </Button>
           </div>

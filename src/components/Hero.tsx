@@ -1,15 +1,15 @@
 "use client";
 
 import gsap from "gsap";
+import Image from "next/image";
 import React, { useEffect } from "react";
 
 import ProjectsMarquee from "@/components/ProjectsMarquee";
 import { Button } from "@/components/ui";
 
+import { freelancerName, socialLinks } from "@/lib/const";
 import useFadeUpAnimation from "@/lib/utils/fadeup";
-import Image from "next/image";
 
-import { freelancerName } from "@/lib/const";
 
 const Hero: React.FC = () => {
   useFadeUpAnimation();
@@ -119,7 +119,9 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="fade-up" data-delay={0.9}>
-              <Button>Get a free strategy call</Button>
+              <Button href={socialLinks.upwork}>
+                Get a free strategy call
+              </Button>
             </div>
           </div>
         </div>

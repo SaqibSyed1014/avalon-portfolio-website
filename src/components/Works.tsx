@@ -13,7 +13,7 @@ import Marquee from "@/components/ui/Marquee";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
 
-import { projects, certifications } from "@/lib/const";
+import { projects, certifications, socialLinks } from "@/lib/const";
 
 
 const WorkProjects :React.FC = () => {
@@ -118,7 +118,9 @@ const WorkProjects :React.FC = () => {
               </div>
 
               <div className="flex justify-center">
-                <Button>Get a free strategy call</Button>
+                <Button href={socialLinks.upwork}>
+                  Get a free strategy call
+                </Button>
               </div>
             </SectionLayout>
           </div>
