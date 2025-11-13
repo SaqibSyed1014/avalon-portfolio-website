@@ -6,12 +6,9 @@ import Marquee from "@/components/ui/Marquee";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
 
-interface Testimonial {
-  review: string;
-  name: string;
-  designation: string;
-  image: string
-}
+import { testimonials } from "@/lib/const";
+
+import { Testimonial } from "@/types/const";
 
 const TestimonialItem :React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
   return (
@@ -35,57 +32,6 @@ const TestimonialItem :React.FC<{ testimonial: Testimonial }> = ({ testimonial }
 }
 
 const Testimonials = () => {
-  const testimonials: Testimonial[] = [
-    {
-      review: "Abdul was a fantastic partner to work with. He brought strong product design skills, great attention to detail, and thoughtful problem-solving to every project.",
-      name: "Tristan",
-      designation: "Chief Operating Officer",
-      image: 'https://framerusercontent.com/images/DzmsX9RY7ZMcxnS0VDE8nrEMJwk.jpg'
-    },
-    {
-      review: "Great professional work, always finding solutions to ensure to provide optimal user experience to our we app. Highly recommended.",
-      name: "Nadim",
-      designation: "Director of Engineering",
-      image: 'https://framerusercontent.com/images/GLRr9uvTdE0X3XmXVEeXLdXHgS8.jpg'
-    },
-    {
-      review: "Rehired Abdul and tasked him in turning Figma into React. His commitment to excellence and the timely delivery of high-quality results has earned our trust and for future projects.",
-      name: "Jessica Lee",
-      designation: "VP of Marketing Strategy",
-      image: 'https://framerusercontent.com/images/oUkBi1c8nERocfQrJWNLxZ9Fipw.jpg'
-    },
-    {
-      review: "Fantastic front end developer skills. Followed instructions clearly. Great communication. Efficient delivery.",
-      name: "Alex Ramirez",
-      designation: "Senior Solutions Architect",
-      image: 'https://framerusercontent.com/images/Dq0D8YrZ8rWDXAualtz8984Y1cg.jpg'
-    },
-    {
-      review: "Abdul delivered exceptional work. He genuine care about our project with excellent communication. Without a doubt, we will definitely hire him again in the future!",
-      name: "Anna",
-      designation: "CEO, Tech Innovation Ltd.",
-      image: 'https://framerusercontent.com/images/ZFX2ljkzvDEzlePf7lzdxzPbxXA.jpg'
-    },
-    {
-      review: "Abdul Wahab Is a fantastic product designer. I am shocked that his process is super simple, and he provides proper results even though my internee developer has no problem understanding it.",
-      name: "Anna",
-      designation: "CEO, Tech Innovation Ltd.",
-      image: 'https://framerusercontent.com/images/ZFX2ljkzvDEzlePf7lzdxzPbxXA.jpg'
-    },
-    {
-      review: "Thank you, abdul, for my luxury restaurant landing page. You have never disappointed me. I surely recommend Abdul. He is the best",
-      name: "Anna",
-      designation: "CEO, Tech Innovation Ltd.",
-      image: 'https://framerusercontent.com/images/ZFX2ljkzvDEzlePf7lzdxzPbxXA.jpg'
-    },
-    {
-      review: "OMG, Abdul, you are amazing. I never thought you could make such massive changes with proper spacing and colors. You have made my day. I will recommend you and hire you again for all design work.",
-      name: "Maggie",
-      designation: "CEO, Tech Innovation Ltd.",
-      image: 'https://framerusercontent.com/images/ZFX2ljkzvDEzlePf7lzdxzPbxXA.jpg'
-    },
-  ];
-
   return (
     <section className="section-v-space">
       <div className="flex flex-col gap-10">

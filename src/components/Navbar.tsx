@@ -4,9 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
+import { freelancerName, socialLinks } from "@/lib/const";
+
 
 const Navbar: React.FC = () => {
   const [isNavOpened, setNavOpened] = useState<boolean>(false);
+
   return (
     <div>
       <div className="fixed top-0 right-0 left-0 w-full z-30 h-8 backdrop-blur-[10px]"></div>
@@ -25,12 +28,12 @@ const Navbar: React.FC = () => {
                 href="/"
                 className="text-xl font-light tracking-wider uppercase transition duration-150 hover:text-gray-300"
               >
-                Abdul Wahab
+                {freelancerName}
               </Link>
 
               {/* Navigation Links */}
               <div className="hidden space-x-8 md:space-x-[22px] xl:flex">
-                <Link href="https://www.linkedin.com/in/abdul-uiux/" target="_blank" className="flex items-center gap-1.5 text-white">
+                <Link href={socialLinks.linkedin} target="_blank" className="flex items-center gap-1.5 text-white">
                   <div className="relative w-6 h-6">
                     <Image
                       src="/images/linkedin.png"
@@ -42,7 +45,7 @@ const Navbar: React.FC = () => {
                   </div>
                   Linkedin
                 </Link>
-                <Link href="https://dribbble.com/abdul_uiux" target="_blank" className="flex items-center gap-1.5 text-white">
+                <Link href={socialLinks.dribbble} target="_blank" className="flex items-center gap-1.5 text-white">
                   <div className="relative w-6 h-6">
                     <Image
                       src="/images/dribbble.svg"
@@ -53,7 +56,7 @@ const Navbar: React.FC = () => {
                   </div>
                   Dribbble
                 </Link>
-                <Link href="https://www.behance.net/abdul_uiux" target="_blank" className="flex items-center gap-1.5 text-white">
+                <Link href={socialLinks.behance} target="_blank" className="flex items-center gap-1.5 text-white">
                   <div className="relative w-6 h-6">
                     <Image
                       src="/images/behance.svg"

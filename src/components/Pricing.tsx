@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useEffect } from "react";
 import gsap from "gsap";
+import React, { useEffect } from "react";
 
 import { Button } from "@/components/ui";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
+
+import { planDetails } from "@/lib/const";
 
 const Pricing = () => {
   useEffect(() => {
@@ -23,34 +25,6 @@ const Pricing = () => {
   }, []);
 
   const pricingCardClass = 'relative h-full group/item hover:scale-[1.02] hover:translate-y-[-10px] transition-all card-style duration-700'
-
-
-  const planDetails = [
-    {
-      name: 'Free Consultation Call',
-      price: '$0/30min',
-      description: 'Let’s discuss your goals, pain points, and growth opportunities.',
-      benefits: [
-        'Personalized project insights',
-        'Timeline & budget guidance',
-        'Strategic UX/UI recommendations',
-        'No commitment required'
-      ],
-      buttonLabel: 'Get a free Consultation call'
-    },
-    {
-      name: 'Monthly UX/UI Designer Retainer',
-      price: '$6000/month',
-      description: 'Ongoing design support for teams that need consistent quality and speed.',
-      benefits: [
-        'Dedicated designer (40 hrs/week)',
-        'Slack & Notion collaboration',
-        'Design systems & iterations included',
-        'Priority turnaround times'
-      ],
-      buttonLabel: 'Start Retainer Plan'
-    }
-  ]
 
   return (
     <section className="section-v-space lg:!pt-[200px]">

@@ -9,6 +9,8 @@ import { Button } from "@/components/ui";
 import useFadeUpAnimation from "@/lib/utils/fadeup";
 import Image from "next/image";
 
+import { freelancerName } from "@/lib/const";
+
 const Hero: React.FC = () => {
   useFadeUpAnimation();
 
@@ -44,7 +46,7 @@ const Hero: React.FC = () => {
 
                   <div className="flex flex-col">
                     <h3 className="text-xl lg:text-2xl xl:text-[32px] leading-[110%]">
-                      Abdul Wahab
+                      {freelancerName}
                     </h3>
 
                     {/* Pulsing Dot */}
@@ -104,8 +106,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-col gap-5">
               {/* Headline */}
               <h1 className="heading-style-1 fade-up" data-delay={0.5}>
-                <span className="hidden xl:block">A Senior UX/UI Designer,<br/> Building Solutions for <span className="font-bold">Founders</span></span>
-                <span className="hidden md:block xl:hidden">A Senior UX/UI Designer,<br/> Building Solutions for <span className="font-bold">Founders</span></span>
+                <span className="hidden md:block">A Senior UX/UI Designer,<br/> Building Solutions for <span className="font-bold">Founders</span></span>
                 <span className="block md:hidden">A Senior UX/UI Designer, Building Solutions for <span className="font-bold">Founders</span></span>
               </h1>
 

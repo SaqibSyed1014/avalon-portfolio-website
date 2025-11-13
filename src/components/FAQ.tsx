@@ -5,31 +5,10 @@ import React, { useState } from "react";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
 
-interface FAQ {
-  question: string;
-  answer: string;
-}
+import { faqs } from "@/lib/const";
 
-const faqs :FAQ[] = [
-  {
-    question: 'How soon can we start?',
-    answer: ' I can usually begin within 1-2 days; discovery calls are available this week.',
-  },
-  {
-    question: 'Do you work with developers?',
-    answer: ' Yes — I hand off production-ready files and collaborate on build.',
-  },
-  {
-    question: 'Can you audit our current site?',
-    answer: 'Yes — I’ll deliver a prioritized UX audit with quick wins and a roadmap.',
-  },
-  {
-    question: 'What tools do you use?',
-    answer: 'Figma, Framer, and modern design-system workflows',
-  }
-]
 
-const FaqSection = () => {
+const FaqSection :React.FC = () => {
 
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 

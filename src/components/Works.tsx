@@ -13,40 +13,8 @@ import Marquee from "@/components/ui/Marquee";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
 
-interface Project {
-  id: string;
-  image: string;
-  alt: string;
-  title: string;
-}
+import { projects, certifications } from "@/lib/const";
 
-const projects :Project[] = [
-  {
-    id: "quantum",
-    title: "Quantum",
-    image: "https://framerusercontent.com/images/e633Jp9rA7J1z8Zq58eJTQNeco.jpg",
-    alt: "Project 1",
-  },
-  {
-    id: "lora",
-    title: "Lora",
-    image:
-      "https://framerusercontent.com/images/NAJSIK5XnZdV1Y4SAp0lueMbA.jpg?scale-down-to=2048",
-    alt: "Project 1",
-  },
-  {
-    id: "eciedge-store",
-    title: "Eciedge Store",
-    image: "https://framerusercontent.com/images/rhrxm36efhkLLxhTgRh5oSvA3g.png",
-    alt: "Project 1",
-  },
-  {
-    id: "zenith",
-    title: "Zenith",
-    image: "https://framerusercontent.com/images/rhrxm36efhkLLxhTgRh5oSvA3g.png",
-    alt: "Project 1",
-  },
-];
 
 const WorkProjects :React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -162,13 +130,6 @@ const WorkProjects :React.FC = () => {
 };
 
 const BadgesMarquee :React.FC = () => {
-  const certifications :string[] = [
-    'Fundamentals of Predictive Project Management',
-    'User Onboarding 101',
-    'Web Development Fundamentals',
-    'Cultivating Digital Literacy',
-    'User Experience Design Fundamentals'
-  ]
   return (
     <div className="bg-secondary flex items-center overflow-hidden h-[78px] lg:h-[160px]">
       <div className="flex gap-16 text-[30px] lg:text-[36px] xl:text-[46px] leading-[110%] text-black [&_li]:shrink-0">

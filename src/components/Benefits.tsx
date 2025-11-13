@@ -5,22 +5,9 @@ import React from "react";
 import SectionHead from "@/components/ui/SectionHead";
 import SectionLayout from "@/components/ui/SectionLayout";
 
-const Benefits = () => {
-  const benefits = [
-    {
-      title: "Business-Centric Solutions",
-      text: "Whether it's SaaS dashboard optimization or MVP design, I focus on maximizing user engagement and conversion rates.",
-    },
-    {
-      title: "Proven Track Record",
-      text: "Trusted by 45+ clients, including notable names like Prospectory AI and Agent Legend, for consistently delivering exceptional work.",
-    },
-    {
-      title: "End-to-End Expertise",
-      text: "From concept to deployment, I ensure seamless transitions and product launches with a focus on quality and performance.",
-    },
-  ];
+import { benefits } from "@/lib/const";
 
+const Benefits = () => {
   const customGradient =
     "radial-gradient(41%_95%_at_50%_99.9%,_rgb(78,78,117)_0%,_rgb(40,40,61)_100%)";
   const customShadow =
