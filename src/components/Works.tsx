@@ -150,7 +150,7 @@ const WorkProjects :React.FC = () => {
               </div>
 
               <div className="flex justify-center">
-                <Button>View more</Button>
+                <Button>Get a free strategy call</Button>
               </div>
             </SectionLayout>
           </div>
@@ -172,7 +172,7 @@ const BadgesMarquee :React.FC = () => {
   return (
     <div className="bg-secondary flex items-center overflow-hidden h-[78px] lg:h-[160px]">
       <div className="flex gap-16 text-[30px] lg:text-[36px] xl:text-[46px] leading-[110%] text-black [&_li]:shrink-0">
-        <Marquee gap={100} scrollBoost={false}>
+        <Marquee gap={30} scrollBoost={false}>
           <div></div>
           {certifications.map((certificate, index) => (
             <div key={index} className="flex items-center gap-2">

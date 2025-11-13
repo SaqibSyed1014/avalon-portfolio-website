@@ -17,7 +17,7 @@ const TestimonialItem :React.FC<{ testimonial: Testimonial }> = ({ testimonial }
   return (
     <div>
       <div className="card-style flex flex-col justify-between h-[233px] w-[363px]">
-        <p className="text-secondary text-wrap">&#34;{testimonial.review}&#34;</p>
+        <p className="text-secondary text-wrap line-clamp-4">&#34;{testimonial.review}&#34;</p>
         <div className="flex gap-3 items-center">
           <div className="size-[55px] rounded-full overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -101,7 +101,7 @@ const Testimonials = () => {
         <div className="flex flex-col gap-2.5"
           style={{ maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgb(0, 0, 0) 23%, rgb(0, 0, 0) 77%, rgba(0, 0, 0, 0.2) 100%)" }}
         >
-            <Marquee speed={120} gap={10} scrollBoost={false}>
+            <Marquee speed={50} gap={10} scrollBoost={false}>
               {testimonials.map((testimonial, index) => (
                 <TestimonialItem testimonial={testimonial} key={index} />
               ))}
@@ -109,7 +109,7 @@ const Testimonials = () => {
                 <TestimonialItem testimonial={testimonial} key={index} />
               ))}
             </Marquee>
-            <Marquee speed={120} gap={10} direction="right" scrollBoost={false}>
+            <Marquee speed={50} gap={10} direction="right" scrollBoost={false}>
               {testimonials.map((testimonial, index) => (
                 <TestimonialItem testimonial={testimonial} key={index} />
               ))}

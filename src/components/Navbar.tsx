@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
 
       <nav
         className={
-          `fixed top-0 right-0 left-0 z-50 w-full px-6 py-5 lg:p-8 xl:px-16 xl:py-10 xl:mix-blend-difference transition-all ${isNavOpened ? "!pb-[60px]" : ""}`
+          `fixed top-0 right-0 left-0 z-50 w-full px-6 py-5 lg:p-8 xl:px-16 xl:py-10 transition-all ${isNavOpened ? "!pb-[60px]" : ""}`
         }
         style={{ background: "transparent" }}
       >

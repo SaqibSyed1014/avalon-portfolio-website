@@ -19,7 +19,7 @@ const Cta = () => {
               </p>
             </div>
             <Button>
-              Get a free 30-minute strategy call
+              Get a free strategy call
             </Button>
           </div>
         </div>

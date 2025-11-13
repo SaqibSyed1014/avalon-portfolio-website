@@ -1,5 +1,8 @@
-// components/VideoPlayer.tsx
+"use client";
+
 import React, { useRef, useState, useEffect } from "react";
+
+import { PlayIcon } from "@/components/icons";
 
 interface VideoPlayerProps {
   src: string;
@@ -16,7 +19,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, poster, width = "100%", 
     const video = videoRef.current;
     if (!video) return;
 
-    // Play muted on page load
     video.muted = true;
     video.volume = 0;
     video.play().catch(() => {
@@ -28,7 +30,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, poster, width = "100%", 
     const video = videoRef.current;
     if (!video) return;
 
-    // Restart and unmute
     video.currentTime = 0;
     video.muted = false;
     video.volume = 1;
@@ -37,19 +38,26 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, poster, width = "100%", 
   };
 
   return (
-    <video
-      ref={videoRef}
-      src={src}
-      poster={poster}
-      width={width}
-      height={height}
-      playsInline
-      preload="metadata"
-      style={{ display: "block", maxWidth: "100%", height: "100%", cursor: "pointer", objectFit: 'cover' }}
-      onClick={handleClick}
-    >
-      Your browser does not support the video tag.
-    </video>
+    <div className="relative size-full">
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        width={width}
+        height={height}
+        loop={true}
+        playsInline
+        preload="metadata"
+        style={{ display: "block", maxWidth: "100%", height: "100%", cursor: "pointer", objectFit: "cover" }}
+        onClick={handleClick}
+      >
+        Your browser does not support the video tag.
+      </video>
+
+      <div className="opacity-0 flex justify-center items-center size-12 rounded-full bg-[#151518] custom-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <PlayIcon />
+      </div>
+    </div>
   );
 };
 

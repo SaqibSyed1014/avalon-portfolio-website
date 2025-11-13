@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="fade-up" data-delay={0.9}>
-              <Button>Get a free 30-minute strategy call</Button>
+              <Button>Get a free strategy call</Button>
             </div>
           </div>
         </div>
