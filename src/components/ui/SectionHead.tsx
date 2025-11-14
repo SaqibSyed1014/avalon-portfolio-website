@@ -6,12 +6,12 @@ type TProps = Readonly<ISectionHead>;
 const SectionHead: FC<TProps> = ({ subText, heading, description, isCentered = false, descWidth = 'max-w-[800px]' }) => {
   return (
     <div className={`${isCentered ? "text-center" : ""} space-y-[10px]`}>
-      <span className="text-secondary font-extralight">{subText}</span>
+      {subText?.length && <span className="text-secondary font-extralight">{subText}</span>}
       <div className="space-y-5">
         <h2 className="section-heading">{heading}</h2>
         {description && (
           <p
-            className={`w-full text-md lg:text-xl leading-[130%] ${descWidth} ${isCentered ? 'mx-auto':''}`}
+            className={`text-md w-full leading-[130%] lg:text-xl ${descWidth} ${isCentered ? "mx-auto" : ""}`}
           >
             {description}
           </p>

@@ -28,6 +28,40 @@ const benefits :Benefit[] = [
   },
 ];
 
+const services :Benefit[] = [
+  {
+    title: "UI/UX Design",
+    text: "I don't do cookie-cutter. Every design is tailored to your brand's identity and goals.",
+  },
+  {
+    title: "Web Design",
+    text: "Your success is my success. I design with the end user in mind, ensuring your website achieves your business objectives.",
+  },
+  {
+    title: "SEO Optimization",
+    text: "The launch is just the beginning. I provide continuous support to keep your website running smoothly.",
+  },
+];
+
+const stack: { title: string; image: string; }[] = [
+  {
+    title: "Framer",
+    image: 'https://framerusercontent.com/images/2DG44Kz1jdRXi5qpPfMuhFBJsY.svg'
+  },
+  {
+    title: "Figma",
+    image: 'https://framerusercontent.com/images/Olt1nW0vxuh40nbF41EfdM5osI.svg'
+  },
+  {
+    title: "Photoshop",
+    image: 'https://framerusercontent.com/images/tuTjdPmtcURR8ADPOLfvOsKigw.svg'
+  },
+  {
+    title: "Google Analytics",
+    image: 'https://framerusercontent.com/images/DNzOmUgtz3QJVnLGFwGqo0MxkQ0.svg'
+  },
+];
+
 const testimonials: Testimonial[] = [
   {
     review: "Abdul was a fantastic partner to work with. He brought strong product design skills, great attention to detail, and thoughtful problem-solving to every project.",
@@ -170,5 +204,7 @@ export {
   projects,
   certifications,
   planDetails,
-  faqs
+  faqs,
+  services,
+  stack
 }
