@@ -210,7 +210,7 @@ const Process = () => {
               </div>
             </div>
 
-            <div className="hidden xl:block h-0.5 absolute bg-[#29293d] left-[-100px] right-[-100px] bottom-[119px] overflow-hidden ">
+            <div className="hidden xl:block h-0.5 absolute bg-[#232D26] left-[-100px] right-[-100px] bottom-[119px] overflow-hidden ">
               <div className="absolute h-0.5 bg-white left-0 w-[40%]"></div>
             </div>
           </SectionLayout>

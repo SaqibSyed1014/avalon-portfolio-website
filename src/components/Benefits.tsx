@@ -26,7 +26,7 @@ const Benefits = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className={`benefit-gradient flex-1 space-y-[33px] rounded-md border border-white/25 p-5 shadow-[0_5px_40px_1px_#24242E_inset] bg-[${customGradient}]`}
+                className={`benefit-gradient flex-1 space-y-[33px] rounded-md border border-white/25 p-5 shadow-[0_5px_40px_1px_#232D26_inset] bg-[${customGradient}]`}
               >
                 <h4 className="heading-style-2">{benefit.title}</h4>
                 <p>{benefit.text}</p>

@@ -25,7 +25,7 @@ const ProjectsMarquee = () => {
 
             <div className="absolute bottom-1 left-1 md:bottom-3 md:left-3">
               <div
-                className="flex justify-center gap-2 md:gap-3 items-center text-sm py-2 px-3 md:py-3 md:px-4 md:text-xl custom-gradient rounded-md border border-white/25">
+                className="flex justify-center gap-2 md:gap-3 items-center text-sm py-2 px-3 md:py-3 md:px-4 md:text-xl benefit-gradient rounded-md border border-white/25">
                 Tristen
                 <div className="max-sm:scale-[.7]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

@@ -95,7 +95,7 @@ const WorkProjects :React.FC = () => {
                       {/*BG gradient*/}
                       <div
                         className="absolute inset-0 brand-gradient shadow-[0_0_60px_30px_#50507052,0_5px_40px_0_#515172_inset] opacity-0 transition-opacity group-hover:opacity-100 duration-700"
-                        style={{ boxShadow: "rgb(81, 81, 114) 0px 5px 40px 0px inset, rgba(69, 69, 97, 0) 0px 0px 60px 2px, rgba(80, 80, 112, 0.32) 0px 0px 60px 30px" }}
+                        style={{ boxShadow: "#232D26 0px 5px 40px 0px inset, #232D26 0px 0px 60px 2px" }}
                       ></div>
 
                       <div className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 duration-700">

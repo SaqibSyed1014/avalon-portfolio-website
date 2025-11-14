@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
                 <Link href={socialLinks.linkedin} target="_blank" className="flex items-center gap-1.5 text-white">
                   <div className="relative w-6 h-6">
                     <Image
-                      src="/images/linkedin.png"
+                      src="/images/linkedin.svg"
                       alt="Linkedin Logo"
                       fill={true}
                       className="object-cover"
