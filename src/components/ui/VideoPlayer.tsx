@@ -54,7 +54,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, poster, width = "100%", 
         Your browser does not support the video tag.
       </video>
 
-      <div className="opacity-0 flex justify-center items-center size-12 rounded-full bg-[#151518] custom-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="flex justify-center items-center size-[68px] rounded-full bg-[#151518] border border-white/25 absolute bottom-4 right-4 z-10 shadow-[0_4px_32px_0.8px_#24242E_inset] bg-[radial-gradient(41%_95%_at_50%_99.9%,rgba(35,35,45,0.5)_0%,rgba(11,11,12,0.5)_100%)]">
         <PlayIcon />
       </div>
     </div>

@@ -85,15 +85,14 @@ const ProcessStep :React.FC<ProcessStepProps> = ({ step }) => {
                 <li key={i} className="ml-3">{point}</li>
               ))}
             </ul>
-            {/*<p>{step.description}</p>*/}
           </div>
         </div>
       </div>
 
       {/*BG gradient*/}
       <div
-        className="absolute inset-0 secondary-gradient opacity-0 transition-opacity"
-        style={{ boxShadow: "rgb(81, 81, 114) 0px 5px 40px 0px inset, rgba(69, 69, 97, 0) 0px 0px 60px 2px, rgba(80, 80, 112, 0.32) 0px 0px 60px 30px" }}
+        className="absolute inset-0 benefit-gradient opacity-0 transition-opacity"
+        style={{ boxShadow: "#232D26 0px 5px 40px 0px inset, #232D26 0px 0px 60px 2px" }}
       ></div>
     </div>
   )
@@ -145,7 +144,7 @@ const Process = () => {
       const cardElems = gsap.utils.toArray<HTMLElement>(".card-style");
 
       cardElems.forEach((card, i) => {
-        const gradient = card.querySelector(".secondary-gradient");
+        const gradient = card.querySelector(".benefit-gradient");
         const desc = card.querySelector(".desc");
 
         if (i === 0) {

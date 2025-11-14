@@ -24,7 +24,7 @@ const Pricing = () => {
     })
   }, []);
 
-  const pricingCardClass = 'relative h-full group/item hover:scale-[1.02] hover:translate-y-[-10px] transition-all card-style duration-700'
+  const pricingCardClass = 'relative h-full group/item hover:scale-[1.02] hover:translate-y-[-10px] transition-all card-style !benefit-gradient duration-700'
 
   return (
     <section className="section-v-space lg:!pt-[200px]">
@@ -73,7 +73,7 @@ const Pricing = () => {
                   </div>
 
                   <div
-                    className="absolute inset-0 secondary-gradient opacity-0 group-hover/item:opacity-40 transition"></div>
+                    className="absolute inset-0 brand-gradient opacity-0 group-hover/item:opacity-40 transition"></div>
                 </div>
               </div>
             ))}

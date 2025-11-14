@@ -10,8 +10,6 @@ import { benefits } from "@/lib/const";
 const Benefits = () => {
   const customGradient =
     "radial-gradient(41%_95%_at_50%_99.9%,_rgb(78,78,117)_0%,_rgb(40,40,61)_100%)";
-  const customShadow =
-    "rgb(81,81,114)_0px_5px_40px_0px_inset,rgba(69,69,97,0)_0px_0px_60px_2px,rgba(80,80,112,0.32)_0px_0px_60px_30px";
 
   return (
     <section className="section-v-space lg:pb-[160px]">
@@ -28,7 +26,7 @@ const Benefits = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className={`custom-gradient flex-1 space-y-[33px] rounded-md border border-white/25 p-5 shadow-[${customShadow}] bg-[${customGradient}]`}
+                className={`benefit-gradient flex-1 space-y-[33px] rounded-md border border-white/25 p-5 shadow-[0_5px_40px_1px_#24242E_inset] bg-[${customGradient}]`}
               >
                 <h4 className="heading-style-2">{benefit.title}</h4>
                 <p>{benefit.text}</p>

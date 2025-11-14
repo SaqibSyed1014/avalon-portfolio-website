@@ -52,8 +52,17 @@
 @utility secondary-gradient{
         background: radial-gradient(41% 94.9346% at 50% 100%, rgb(78, 78, 117) 0%, rgb(40, 40, 61) 100%);
     }
+@utility brand-gradient{
+    background: radial-gradient(41% 94.93% at 50% 100%, #232D26 0%, #232D26 100%);
+}
+@utility benefit-gradient{
+    background: radial-gradient(41% 95% at 50% 99.9%, #232D26 0%, #0B0B0C 100%);
+}
+@utility pricing-bg{
+    background: radial-gradient(41% 95% at 50% 99.9%, #232D26 0%, #0B0B0C 100%);
+}
 @utility card-style{
-        @apply p-5 border border-white/25 rounded-md custom-gradient;
+        @apply p-5 border border-white/25 rounded-md benefit-gradient;
 }
 @utility mobile-nav-bg{
     background: linear-gradient(rgba(11, 11, 15, 0.8) 32.4324%, rgba(11, 11, 15, 0) 100%) rgba(0, 0, 0, 0);
